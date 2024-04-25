@@ -112,6 +112,14 @@ public interface IService
     [OperationContract]
     bool EliminarMateriaPorId(int idMateria);
     #endregion
+
+    #region "Asistencias"
+
+    #endregion
+
+    #region "Calificaciones"
+
+    #endregion
 }
 
 [DataContract]
