@@ -751,4 +751,8 @@ public class Service : IService
 
     #endregion
 
+    #region "Materias_estudiantes"
+    //CREATE Materias estudiantes
+    #endregion
+
 }
