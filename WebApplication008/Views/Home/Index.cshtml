@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container ">
+    <div class="row " style="margin:110px 15px;">
+        <div class="col-md-4 ">
+            <div class="text-center">
+                <img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="200" height="200" />
+                <br />
+                @Html.ActionLink("Empleados", "Index", new { controller = "Employee" }, new { @class = "btn btn-outline-success btn-lg " })
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="text-center">
+                <img class="Bootstrap center-block Image Preview rounded" src="~/Content/libros_asignaturas.png" width="100" height="85" />
+                <br /><br />
+                @Html.ActionLink("Materias", "Index", new { controller = "Materia" }, new { @class = "btn btn-outline-success btn-lg " })
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="text-center">
+                <img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="200" height="200" />
+                <br />
+                @Html.ActionLink("Usuarios", "Index", new { controller = "Usuarios" }, new { @class = "btn btn-outline-success btn-lg " })
+            </div>
+        </div>
+    </div>
+</div>

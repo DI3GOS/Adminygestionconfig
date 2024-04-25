@@ -1,0 +1,102 @@
+﻿@model WebApplication008.Models.EmployeeDetails
+
+@{
+    ViewBag.Title = "Editar Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Editar</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div style="width:900px; padding:3px;">
+        <div style="width:420px; float:left;">
+            <div class="text-center center-block">
+                <img class="Bootstrap center-block Image Preview rounded" src="~/Content/tarjetaEmpleado.png" width="280" height="200" />
+            </div>
+        </div>
+
+        <div style="width:420px; float:right;">
+            <h4>Empleado</h4>
+            <hr />
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.EmpId)
+                @*<div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.EmpId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmpId, new { htmlAttributes = new { @class = "form-control", readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.EmpId, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.WorkType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.WorkType, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.WorkType, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Guardar" class="btn btn-outline-success" /><br /> <br />
+                        @Html.ActionLink("Regresar al Listado", "Index")
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>        
+}
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

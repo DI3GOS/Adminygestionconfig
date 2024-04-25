@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebApplication008.Models.UserModel>
+
+@{
+    ViewBag.Title = "Inicio Usuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>Usuarios</h4>
+    <table>
+        <tr>
+            <td>
+                @Html.ActionLink("Crear Nuevo", "Create", "Usuario", null, new { @class = "addUser"})
+            </td>            
+            <td width="68%"></td>            
+            <td>
+                <form class="form-inline my-2 my-lg-0" method="post">
+                    <input class="form-control mr-sm-2" type="text" name="inputBuscar" placeholder="Buscar por Nombre">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </td>
+        </tr>
+    </table>    
+    <table class="table table-hover">
+        <tr class="table-dark">
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Regresar al menu", "Index", "Home")
+    </div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebApplication008.Models.MateriaModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Materias</h2>
+
+<p>
+    @Html.ActionLink("Crear Nueva", "Create", "Materia", null, new { @class = "" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id_materia }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id_materia }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id_materia })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("Regresar al menu", "Index", "Home")
+</div>

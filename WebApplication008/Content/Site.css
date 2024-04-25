@@ -1,0 +1,159 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* imagen para Usuario */
+.addUser {
+    background-image: url("addUser.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;    
+}
+
+/* imagen para Empleado */
+.addicon {
+    background-image: url("btn_agregar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    text-indent: -9999px;
+}
+
+/* classes para poner label y typetext en misma linea  BEGIN */
+.divAjusta_lbl_inputtype_text {
+    margin: .5em 0;
+}
+
+    .divAjusta_lbl_inputtype_text label {
+        padding-top: 3px;
+        width: 25%;
+        float: left;
+    }
+
+/* classes para poner label y typetext en misma linea  END */
+
+hr {
+    height: 1px;
+    background-color: green;
+}
+
+/* Traido desde pag https://bootsnipp.com/snippets/vl4R7  */
+
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html, body {
+    /*background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');*/
+    background-image: url('FondoImg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    /* -webkit-filter: brightness(80%) contrast(80%); */ /*Linea agregada para quitarle brillo*/
+    font-family: 'Numans', sans-serif;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height: 75%; /*370px;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 95%;/*400px;*/
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+    .social_icon span:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+    color: white;
+}
+
+    .remember input {
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+    }
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+    .login_btn:hover {
+        color: black;
+        background-color: white;
+    }
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+

@@ -1,0 +1,100 @@
+﻿@model WebApplication008.Models.EmployeesModel
+
+@{
+    ViewBag.Title = "Crear Empleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h4>Crear</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <div style="width:900px; padding:3px;">
+            <div style="width:420px; float:left;">
+                <div class="text-center center-block">
+                    <img class="Bootstrap center-block Image Preview rounded" src="~/Content/tarjetaEmpleado.png" width="280" height="200" />
+                </div>
+            </div>
+            <div style="width:420px; float:right;">
+                <h4>Empleado</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })  @* Para validar los campos*@
+                @*<div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.EmpId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    <div class="col-md-10">
+                    @Html.EditorFor(model => model.EmpId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EmpId, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @*new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.Name) } }*@
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.Name) } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @*@Html.ValidationSummary(Model.Name == "")*@
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.Address) } }) @*new { htmlAttributes = new { @class = "form-control" } }*@
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.Age) } }) @*new { htmlAttributes = new { @class = "form-control" } }*@
+                    @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.Salary) } }) @*new { htmlAttributes = new { @class = "form-control" } }*@
+                    @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+
+                <div class="divAjusta_lbl_inputtype_text">
+                    <label>
+                        @Html.LabelFor(model => model.WorkType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    </label>
+                    @*<div class="col-md-10">*@
+                    @Html.EditorFor(model => model.WorkType, new { htmlAttributes = new { @class = "form-control input_user text-center", placeholder = @Html.DisplayNameFor(m => m.WorkType) } }) @*new { htmlAttributes = new { @class = "form-control" } }*@
+                    @Html.ValidationMessageFor(model => model.WorkType, "", new { @class = "text-danger" })
+                    @*</div>*@
+                </div>
+                @*@Html.ValidationMessage("mensajeErrorName", new { @class = "text-danger" })*@
+                <br />
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Crear" class="btn btn-outline-success" /><br /> <br />
+                        @Html.ActionLink("Regresar al Listado", "Index")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!--Cierra div form-horizontal-->
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

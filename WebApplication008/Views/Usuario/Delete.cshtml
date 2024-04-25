@@ -1,0 +1,77 @@
+﻿@model WebApplication008.Models.UserModel
+
+@{
+    ViewBag.Title = "Borrar Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Borrar</h4>
+
+<h4>Está seguro de eliminar este usuario?</h4>
+
+<div style="width:900px; padding:3px;">
+
+    <div style="width:420px; float:left;">
+        <div class="text-center center-block">
+            <img class="Bootstrap center-block Image Preview rounded" src="~/Content/Usuario.png" width="250" height="200" />
+        </div>
+    </div>
+    <div style="width:420px; float:right;">
+        <div>
+            <h4>Usuario</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Apellido)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" onclick="return confirm('Desea eliminar a este Usuario?');" value="Borrar" class="btn btn-outline-success" /> |
+                    @Html.ActionLink("Regresar al Listado", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>

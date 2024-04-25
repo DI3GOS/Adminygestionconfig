@@ -1,0 +1,50 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - COLEGIO UNIMINUTO</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <div class="navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarColor01">
+                    <span class="navbar-icon"></span>
+                    <span class="navbar-icon"></span>
+                    <span class="navbar-icon"></span>
+                </button>
+                @*@Html.ActionLink("CTE COLSUBSIDIO", "", "", new { area = "" }, new { @class = "navbar-brand" })*@
+                <a href="#" class="navbar-brand">COLEGIO UNIMINUTO</a>
+                <div class="navbar-collapse collapse pull-right" style="color:white !important;">
+                    @{
+                        //Esto es para mostrar el Usuario Logeado en la pantalla principal
+                        if (!string.IsNullOrEmpty(Session["UserName"] as string))
+                        {
+                            @:<label style="height:27px; width:90%; text-align:right;">
+                                @:Hola &nbsp;@HttpContext.Current.Session["UserName"].ToString()&nbsp;
+                                @Html.ActionLink("Cerrar Sesión", "Index", "Login", null, new { @class = "btn btn-outline-success btn-md" })
+                            @: </label>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        @*<hr />*@
+        <footer>
+            @*<p>&copy; @DateTime.Now.Year - Develop by Johny Camargo CopyRight</p>*@
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
