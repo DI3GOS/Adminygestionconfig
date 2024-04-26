@@ -1,0 +1,49 @@
+﻿@model WebApplication008.WCFServicioDatos.Materias_estudiantes
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro que desea borrar esto?</h3>
+<div>
+    <h4>Materias_estudiantes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_materia_estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia_estudiante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" onclick="return confirm('Desea borrar esta Materia estudiante?');" value="Borrar" class="btn btn-outline-success" /> |
+            @Html.ActionLink("Regresar al Listado", "Index")
+        </div>
+    }
+</div>

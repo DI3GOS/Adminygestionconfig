@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Eliminar</h2>
+<h2>Borrar</h2>
 
-<h3>Está seguro de eliminar este usuario?</h3>
+<h3>Está seguro de borrar este usuario?</h3>
 <div>
     <h4>Usuarios</h4>
     <hr />
@@ -58,7 +58,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" onclick="return confirm('Desea eliminar a este Usuario?');" value="Eliminar" class="btn btn-outline-success" /> |
+            <input type="submit" onclick="return confirm('Desea borrar este Usuario?');" value="Borrar" class="btn btn-outline-success" /> |
             @Html.ActionLink("Regresar al Listado", "Index")
         </div>
     }

@@ -1,0 +1,43 @@
+﻿@model WebApplication008.WCFServicioDatos.Materias_estudiantes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Materias_estudiantes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_materia_estudiante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia_estudiante)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_materia_estudiante }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>
