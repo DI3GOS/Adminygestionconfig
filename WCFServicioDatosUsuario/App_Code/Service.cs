@@ -744,7 +744,32 @@ public class Service : IService
     #endregion
 
     #region "Asistencias"
+    //CREATE Asistencias
+    public bool CrearAsistencia(Asistencias asistencia)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            var newAsistencia = new Asistencias
+            {
+                id_asistencia = asistencia.id_asistencia,
+                id_usuario = asistencia.id_usuario,
+                id_materia = asistencia.id_materia,
+                fecha = asistencia.fecha,
+                asistio = asistencia.asistio
+            };
 
+            DBcontext.Asistencias.Add(newAsistencia);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
     #endregion
 
     #region "Calificaciones"

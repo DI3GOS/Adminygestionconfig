@@ -111,10 +111,10 @@ public interface IService
 
     [OperationContract]
     bool EliminarMateriaPorId(int idMateria);
-    #endregion
+	#endregion
 
-    #region "Asistencias"
-
+	#region "Asistencias"
+	bool CrearAsistencia(Asistencias asistencia);
     #endregion
 
     #region "Calificaciones"
