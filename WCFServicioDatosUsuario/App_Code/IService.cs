@@ -133,7 +133,20 @@ public interface IService
 
 
     #region "Calificaciones"
+    [OperationContract]
+    bool CrearCalificaciones(Calificaciones calificaciones);
+    
+    [OperationContract]
+    bool EditarCalificacion(Calificaciones calificacion);
 
+    [OperationContract]
+    List<Calificaciones> ListarCalificaciones();
+
+    [OperationContract]
+    List<Calificaciones> ListarCalificacionesPorIdUsuario(int idUsuario);
+
+    [OperationContract]
+    bool EliminarCalificacionPorId(int idCalificacion);
     #endregion
 }
 

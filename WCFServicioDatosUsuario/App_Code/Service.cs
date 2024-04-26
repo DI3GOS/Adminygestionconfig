@@ -864,7 +864,123 @@ public class Service : IService
     #endregion
 
     #region "Calificaciones"
+    //CREATE Calificacion
+    public bool CrearCalificaciones(Calificaciones calificaciones)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            var newCalificacion = new Calificaciones
+            {
+                id_calificacion = calificaciones.id_calificacion,
+                id_usuario = calificaciones.id_usuario,
+                id_materia = calificaciones.id_materia,
+                tipo_actividad = calificaciones.tipo_actividad,
+                calificacion = calificaciones.calificacion
+            };
 
+            DBcontext.Calificaciones.Add(newCalificacion);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+    //UPDATE Calificaciones BY id
+    public bool EditarCalificacion(Calificaciones calificacion)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Calificaciones calificacionObj = new Calificaciones();
+            calificacionObj.id_calificacion = calificacion.id_calificacion;
+            calificacionObj.id_usuario = calificacion.id_usuario;
+            calificacionObj.id_materia = calificacion.id_materia;
+            calificacionObj.tipo_actividad = calificacion.tipo_actividad;
+            calificacionObj.calificacion = calificacion.calificacion;
+
+            contextDb.Entry(calificacion).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //READ Consultar Calificaciones
+    public List<Calificaciones> ListarCalificaciones()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Calificaciones> calificacionlist = new List<Calificaciones>();
+
+        var lstCalificacion = from k in contextDb.Calificaciones select k;
+
+        foreach (var item in lstCalificacion)
+        {
+            Calificaciones calificacion = new Calificaciones();
+            calificacion.id_calificacion = item.id_calificacion;
+            calificacion.id_usuario = item.id_usuario;
+            calificacion.id_materia = item.id_materia;
+            calificacion.tipo_actividad = item.tipo_actividad;
+            calificacion.calificacion = item.calificacion;
+
+            calificacionlist.Add(calificacion);
+        }
+        return calificacionlist;
+    }
+
+    //READ Consultar Calificaciones por Id usuario
+    public List<Calificaciones> ListarCalificacionesPorIdUsuario(int idUsuario)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Calificaciones> califiacionlist = new List<Calificaciones>();
+
+        var lstCalificacion = from k in contextDb.Calificaciones
+                             where k.id_usuario == idUsuario
+                             select k;
+
+        foreach (var item in lstCalificacion)
+        {
+            Calificaciones calificacion = new Calificaciones();
+            calificacion.id_calificacion = item.id_calificacion;
+            calificacion.id_usuario = item.id_usuario;
+            calificacion.id_materia = item.id_materia;
+            calificacion.tipo_actividad = item.tipo_actividad;
+            calificacion.calificacion = item.calificacion;
+
+            califiacionlist.Add(calificacion);
+        }
+        return califiacionlist;
+    }
+
+    //DELETE Asistencia por id 
+    public bool EliminarCalificacionPorId(int idCalificacion)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Calificaciones calificacion = new Calificaciones();
+            calificacion.id_calificacion = idCalificacion;
+            DBcontext.Entry(calificacion).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
     #endregion
 
     #region "Materias_estudiantes"
