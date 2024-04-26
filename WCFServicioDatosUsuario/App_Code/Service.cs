@@ -985,6 +985,230 @@ public class Service : IService
 
     #region "Materias_estudiantes"
     //CREATE Materias estudiantes
+    public bool CrearMateriasEstudiantes(Materias_estudiantes materiaEstudiante)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            var newMateriasEstudiantes = new Materias_estudiantes
+            {
+                id_materia_estudiante = materiaEstudiante.id_materia_estudiante,
+                id_materia = materiaEstudiante.id_materia,
+                id_usuario = materiaEstudiante.id_usuario
+            };
+
+            DBcontext.Materias_estudiantes.Add(newMateriasEstudiantes);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //UPDATE Materias estudiantes BY id
+    public bool EditarMateriaEstudiante(Materias_estudiantes materiaEstudiante)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Materias_estudiantes materiasEstudiantesObj = new Materias_estudiantes();
+            materiasEstudiantesObj.id_materia_estudiante = materiaEstudiante.id_materia_estudiante;
+            materiasEstudiantesObj.id_materia = materiaEstudiante.id_materia;
+            materiasEstudiantesObj.id_usuario = materiaEstudiante.id_usuario;
+
+            contextDb.Entry(materiaEstudiante).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //READ Consultar MateriasEstudiantes
+    public List<Materias_estudiantes> ListarMateriasEstudiantes()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias_estudiantes> materiaEstudiantelist = new List<Materias_estudiantes>();
+
+        var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes select k;
+
+        foreach (var item in lstMateriasEstudiantes)
+        {
+            Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+            materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
+            materiaEstudiantes.id_materia = item.id_materia;
+            materiaEstudiantes.id_usuario = item.id_usuario;
+
+
+            materiaEstudiantelist.Add(materiaEstudiantes);
+        }
+        return materiaEstudiantelist;
+    }
+
+    //READ Consultar MateriasEstudiantes por id usuario
+    public List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int idUsuario)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias_estudiantes> estudiantesMaterialist = new List<Materias_estudiantes>();
+
+        var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes
+                          where k.id_usuario == idUsuario
+                          select k;
+
+        foreach (var item in lstMateriasEstudiantes)
+        {
+            Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+            materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
+            materiaEstudiantes.id_materia = item.id_materia;
+            materiaEstudiantes.id_usuario = item.id_usuario;
+
+            estudiantesMaterialist.Add(materiaEstudiantes);
+        }
+        return estudiantesMaterialist;
+    }
+
+    //DELETE Materia por id Materia
+    public bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+            materiaEstudiantes.id_materia_estudiante = idMateriaEstudiante;
+            DBcontext.Entry(materiaEstudiantes).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
     #endregion
 
+
+    #region "Materias_docentes"
+    //CREATE Materias docentes
+    public bool CrearMateriasDocentes(Materias_docentes materiaDocente)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            var newMateriasDocentes = new Materias_docentes
+            {
+                id_materia_docente = materiaDocente.id_materia_docente,
+                id_materia = materiaDocente.id_materia,
+                id_usuario = materiaDocente.id_usuario
+            };
+
+            DBcontext.Materias_docentes.Add(newMateriasDocentes);
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //UPDATE Materias docentes BY id
+    public bool EditarMateriaDocente(Materias_docentes materiaDocente)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Materias_docentes materiasDocentesObj = new Materias_docentes();
+            materiasDocentesObj.id_materia_docente = materiaDocente.id_materia_docente;
+            materiasDocentesObj.id_materia = materiaDocente.id_materia;
+            materiasDocentesObj.id_usuario = materiaDocente.id_usuario;
+
+            contextDb.Entry(materiaDocente).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //READ Consultar MateriasEstudiantes
+    public List<Materias_docentes> ListarMateriasDocentes()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias_docentes> materiaDocenteslist = new List<Materias_docentes>();
+
+        var lstMateriasDocentes = from k in contextDb.Materias_docentes select k;
+
+        foreach (var item in lstMateriasDocentes)
+        {
+            Materias_docentes materiaDocentes = new Materias_docentes();
+            materiaDocentes.id_materia_docente = item.id_materia_docente;
+            materiaDocentes.id_materia = item.id_materia;
+            materiaDocentes.id_usuario = item.id_usuario;
+
+
+            materiaDocenteslist.Add(materiaDocentes);
+        }
+        return materiaDocenteslist;
+    }
+
+    //READ Consultar MateriasDocentes por id usuario
+    public List<Materias_docentes> ListarMateriasDocentesPorId(int idUsuario)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias_docentes> docentesMaterialist = new List<Materias_docentes>();
+
+        var lstMateriasDocentes = from k in contextDb.Materias_docentes
+                                     where k.id_usuario == idUsuario
+                                     select k;
+
+        foreach (var item in lstMateriasDocentes)
+        {
+            Materias_docentes materiaDocentes = new Materias_docentes();
+            materiaDocentes.id_materia_docente = item.id_materia_docente;
+            materiaDocentes.id_materia = item.id_materia;
+            materiaDocentes.id_usuario = item.id_usuario;
+
+            docentesMaterialist.Add(materiaDocentes);
+        }
+        return docentesMaterialist;
+    }
+
+    //DELETE Materia por id Materia
+    public bool EliminarMateriaDocentesPorId(int idMateriaDocente)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Materias_docentes materiaDocentes = new Materias_docentes();
+            materiaDocentes.id_materia_docente = idMateriaDocente;
+            DBcontext.Entry(materiaDocentes).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+    #endregion
 }

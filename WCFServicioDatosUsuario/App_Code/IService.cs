@@ -148,6 +148,40 @@ public interface IService
     [OperationContract]
     bool EliminarCalificacionPorId(int idCalificacion);
     #endregion
+
+    #region "Materias Estudiantes"
+    [OperationContract]
+    bool CrearMateriasEstudiantes(Materias_estudiantes materiaEstudiante);
+
+    [OperationContract]
+    bool EditarMateriaEstudiante(Materias_estudiantes materiaEstudiante);
+
+    [OperationContract]
+    List<Materias_estudiantes> ListarMateriasEstudiantes();
+
+    [OperationContract]
+    List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int idUsuario);
+
+    [OperationContract]
+    bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante);
+    #endregion
+
+    #region "Materias Docentes"
+    [OperationContract]
+    bool CrearMateriasDocentes(Materias_docentes materiaDocente);
+
+    [OperationContract]
+    bool EditarMateriaDocente(Materias_docentes materiaDocente);
+
+    [OperationContract]
+    List<Materias_docentes> ListarMateriasDocentes();
+
+    [OperationContract]
+    List<Materias_docentes> ListarMateriasDocentesPorId(int idUsuario);
+
+    [OperationContract]
+    bool EliminarMateriaDocentesPorId(int idMateriaDocente);
+    #endregion
 }
 
 [DataContract]
