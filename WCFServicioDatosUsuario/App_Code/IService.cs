@@ -116,16 +116,24 @@ public interface IService
     #region "Asistencias"
     [OperationContract]
     bool CrearAsistencia(Asistencias asistencia);
+    
     [OperationContract]
     bool EditarAsistencia(Asistencias asistencia);
-    #endregion
+
     [OperationContract]
     List<Asistencias> ListarAsistencias();
-    #region "Calificaciones"
+    
     [OperationContract]
     List<Asistencias> ListarAsistenciasPorIdMateria(int idMateria);
+    
     [OperationContract]
     bool EliminarAsistenciaPorId(int idAsistencia);
+
+    #endregion
+
+
+    #region "Calificaciones"
+
     #endregion
 }
 
