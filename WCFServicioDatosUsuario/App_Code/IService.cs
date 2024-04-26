@@ -10,51 +10,7 @@ using System.Text;
 [ServiceContract]
 public interface IService
 {
-	#region Empleado
-
-	[OperationContract]
-	int InsertarEmpleado(EmployeeDetails empleado); //C
-
-	[OperationContract]
-	List<EmployeeDetails> ListarTodosEmpleados(); // R
-
-	[OperationContract]
-	EmployeeDetails ObtenerEmpleadoPorId(int empId); // R
-
-	[OperationContract]
-	List<EmployeeDetails> ObtenerEmpleadosPorNombre(string Name); // R
-
-	[OperationContract]
-	int ModificarEmpleado(EmployeeDetails emp); // U
-
-	[OperationContract]
-	int BorrarEmpleadoPorId(int empId); // D
-
-	#endregion
-
-	#region Usuario
-
-	[OperationContract]
-	int InsertarUsuario(Usuario usuario); //C
-
-	[OperationContract]
-	List<Usuario> ListarTodosUsuarios();   //R
-
-	[OperationContract]
-	Usuario ObtenerUsuarioPorId(int id);   //R
-
-	[OperationContract]
-	List<Usuario> ObtenerUsuariosPorNombre(string Name);   //R
-
-	[OperationContract]
-	int ModificarUsuario(Usuario user);  //U
-
-	[OperationContract]
-	int BorrarUsuarioPorId(int Id);  //D
-
-    #endregion
-
-    #region "Usuarios"
+	#region "Usuarios"
 
     [OperationContract]
     bool CrearUsuario(Usuarios usuarios);  //C
@@ -70,6 +26,9 @@ public interface IService
 
     [OperationContract]
     List<Usuarios> ConsultarUsuariosPorLogin(string login); // R
+
+    [OperationContract]
+    List<Usuarios> ConsultarUsuariosPorRol(string rol); //R
 
     [OperationContract]
     bool EditarUsuario(Usuarios users); //U

@@ -23,9 +23,6 @@ public partial class LoginDBEntities : DbContext
         throw new UnintentionalCodeFirstException();
     }
 
-    public virtual DbSet<EmployeeDetails> EmployeeDetails { get; set; }
-    public virtual DbSet<Usuario> Usuario { get; set; }
-    public virtual DbSet<Productos> Productos { get; set; }
     public virtual DbSet<Asistencias> Asistencias { get; set; }
     public virtual DbSet<Calificaciones> Calificaciones { get; set; }
     public virtual DbSet<Materias> Materias { get; set; }

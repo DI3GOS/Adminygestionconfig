@@ -15,256 +15,6 @@ namespace WebApplication008.WCFServicioDatos {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EmployeeDetails", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class EmployeeDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> AgeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int EmpIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> SalaryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string WorkTypeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> Age {
-            get {
-                return this.AgeField;
-            }
-            set {
-                if ((this.AgeField.Equals(value) != true)) {
-                    this.AgeField = value;
-                    this.RaisePropertyChanged("Age");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int EmpId {
-            get {
-                return this.EmpIdField;
-            }
-            set {
-                if ((this.EmpIdField.Equals(value) != true)) {
-                    this.EmpIdField = value;
-                    this.RaisePropertyChanged("EmpId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> Salary {
-            get {
-                return this.SalaryField;
-            }
-            set {
-                if ((this.SalaryField.Equals(value) != true)) {
-                    this.SalaryField = value;
-                    this.RaisePropertyChanged("Salary");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WorkType {
-            get {
-                return this.WorkTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkTypeField, value) != true)) {
-                    this.WorkTypeField = value;
-                    this.RaisePropertyChanged("WorkType");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://schemas.datacontract.org/2004/07/")]
-    [System.SerializableAttribute()]
-    public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ApellidoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PasswordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string UserNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Apellido {
-            get {
-                return this.ApellidoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ApellidoField, value) != true)) {
-                    this.ApellidoField = value;
-                    this.RaisePropertyChanged("Apellido");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Password {
-            get {
-                return this.PasswordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
-                    this.PasswordField = value;
-                    this.RaisePropertyChanged("Password");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UserName {
-            get {
-                return this.UserNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserNameField, value) != true)) {
-                    this.UserNameField = value;
-                    this.RaisePropertyChanged("UserName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Usuarios", Namespace="http://schemas.datacontract.org/2004/07/")]
     [System.SerializableAttribute()]
     public partial class Usuarios : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -982,78 +732,6 @@ namespace WebApplication008.WCFServicioDatos {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFServicioDatos.IService")]
     public interface IService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertarEmpleado", ReplyAction="http://tempuri.org/IService/InsertarEmpleadoResponse")]
-        int InsertarEmpleado(WebApplication008.WCFServicioDatos.EmployeeDetails empleado);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertarEmpleado", ReplyAction="http://tempuri.org/IService/InsertarEmpleadoResponse")]
-        System.Threading.Tasks.Task<int> InsertarEmpleadoAsync(WebApplication008.WCFServicioDatos.EmployeeDetails empleado);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTodosEmpleados", ReplyAction="http://tempuri.org/IService/ListarTodosEmpleadosResponse")]
-        WebApplication008.WCFServicioDatos.EmployeeDetails[] ListarTodosEmpleados();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTodosEmpleados", ReplyAction="http://tempuri.org/IService/ListarTodosEmpleadosResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails[]> ListarTodosEmpleadosAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerEmpleadoPorId", ReplyAction="http://tempuri.org/IService/ObtenerEmpleadoPorIdResponse")]
-        WebApplication008.WCFServicioDatos.EmployeeDetails ObtenerEmpleadoPorId(int empId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerEmpleadoPorId", ReplyAction="http://tempuri.org/IService/ObtenerEmpleadoPorIdResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails> ObtenerEmpleadoPorIdAsync(int empId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerEmpleadosPorNombre", ReplyAction="http://tempuri.org/IService/ObtenerEmpleadosPorNombreResponse")]
-        WebApplication008.WCFServicioDatos.EmployeeDetails[] ObtenerEmpleadosPorNombre(string Name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerEmpleadosPorNombre", ReplyAction="http://tempuri.org/IService/ObtenerEmpleadosPorNombreResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails[]> ObtenerEmpleadosPorNombreAsync(string Name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ModificarEmpleado", ReplyAction="http://tempuri.org/IService/ModificarEmpleadoResponse")]
-        int ModificarEmpleado(WebApplication008.WCFServicioDatos.EmployeeDetails emp);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ModificarEmpleado", ReplyAction="http://tempuri.org/IService/ModificarEmpleadoResponse")]
-        System.Threading.Tasks.Task<int> ModificarEmpleadoAsync(WebApplication008.WCFServicioDatos.EmployeeDetails emp);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BorrarEmpleadoPorId", ReplyAction="http://tempuri.org/IService/BorrarEmpleadoPorIdResponse")]
-        int BorrarEmpleadoPorId(int empId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BorrarEmpleadoPorId", ReplyAction="http://tempuri.org/IService/BorrarEmpleadoPorIdResponse")]
-        System.Threading.Tasks.Task<int> BorrarEmpleadoPorIdAsync(int empId);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertarUsuario", ReplyAction="http://tempuri.org/IService/InsertarUsuarioResponse")]
-        int InsertarUsuario(WebApplication008.WCFServicioDatos.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertarUsuario", ReplyAction="http://tempuri.org/IService/InsertarUsuarioResponse")]
-        System.Threading.Tasks.Task<int> InsertarUsuarioAsync(WebApplication008.WCFServicioDatos.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTodosUsuarios", ReplyAction="http://tempuri.org/IService/ListarTodosUsuariosResponse")]
-        WebApplication008.WCFServicioDatos.Usuario[] ListarTodosUsuarios();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTodosUsuarios", ReplyAction="http://tempuri.org/IService/ListarTodosUsuariosResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario[]> ListarTodosUsuariosAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerUsuarioPorId", ReplyAction="http://tempuri.org/IService/ObtenerUsuarioPorIdResponse")]
-        WebApplication008.WCFServicioDatos.Usuario ObtenerUsuarioPorId(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerUsuarioPorId", ReplyAction="http://tempuri.org/IService/ObtenerUsuarioPorIdResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario> ObtenerUsuarioPorIdAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerUsuariosPorNombre", ReplyAction="http://tempuri.org/IService/ObtenerUsuariosPorNombreResponse")]
-        WebApplication008.WCFServicioDatos.Usuario[] ObtenerUsuariosPorNombre(string Name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ObtenerUsuariosPorNombre", ReplyAction="http://tempuri.org/IService/ObtenerUsuariosPorNombreResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario[]> ObtenerUsuariosPorNombreAsync(string Name);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ModificarUsuario", ReplyAction="http://tempuri.org/IService/ModificarUsuarioResponse")]
-        int ModificarUsuario(WebApplication008.WCFServicioDatos.Usuario user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ModificarUsuario", ReplyAction="http://tempuri.org/IService/ModificarUsuarioResponse")]
-        System.Threading.Tasks.Task<int> ModificarUsuarioAsync(WebApplication008.WCFServicioDatos.Usuario user);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BorrarUsuarioPorId", ReplyAction="http://tempuri.org/IService/BorrarUsuarioPorIdResponse")]
-        int BorrarUsuarioPorId(int Id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/BorrarUsuarioPorId", ReplyAction="http://tempuri.org/IService/BorrarUsuarioPorIdResponse")]
-        System.Threading.Tasks.Task<int> BorrarUsuarioPorIdAsync(int Id);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearUsuario", ReplyAction="http://tempuri.org/IService/CrearUsuarioResponse")]
         bool CrearUsuario(WebApplication008.WCFServicioDatos.Usuarios usuarios);
         
@@ -1083,6 +761,12 @@ namespace WebApplication008.WCFServicioDatos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ConsultarUsuariosPorLogin", ReplyAction="http://tempuri.org/IService/ConsultarUsuariosPorLoginResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuarios[]> ConsultarUsuariosPorLoginAsync(string login);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ConsultarUsuariosPorRol", ReplyAction="http://tempuri.org/IService/ConsultarUsuariosPorRolResponse")]
+        WebApplication008.WCFServicioDatos.Usuarios[] ConsultarUsuariosPorRol(string rol);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ConsultarUsuariosPorRol", ReplyAction="http://tempuri.org/IService/ConsultarUsuariosPorRolResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuarios[]> ConsultarUsuariosPorRolAsync(string rol);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarUsuario", ReplyAction="http://tempuri.org/IService/EditarUsuarioResponse")]
         bool EditarUsuario(WebApplication008.WCFServicioDatos.Usuarios users);
@@ -1304,102 +988,6 @@ namespace WebApplication008.WCFServicioDatos {
                 base(binding, remoteAddress) {
         }
         
-        public int InsertarEmpleado(WebApplication008.WCFServicioDatos.EmployeeDetails empleado) {
-            return base.Channel.InsertarEmpleado(empleado);
-        }
-        
-        public System.Threading.Tasks.Task<int> InsertarEmpleadoAsync(WebApplication008.WCFServicioDatos.EmployeeDetails empleado) {
-            return base.Channel.InsertarEmpleadoAsync(empleado);
-        }
-        
-        public WebApplication008.WCFServicioDatos.EmployeeDetails[] ListarTodosEmpleados() {
-            return base.Channel.ListarTodosEmpleados();
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails[]> ListarTodosEmpleadosAsync() {
-            return base.Channel.ListarTodosEmpleadosAsync();
-        }
-        
-        public WebApplication008.WCFServicioDatos.EmployeeDetails ObtenerEmpleadoPorId(int empId) {
-            return base.Channel.ObtenerEmpleadoPorId(empId);
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails> ObtenerEmpleadoPorIdAsync(int empId) {
-            return base.Channel.ObtenerEmpleadoPorIdAsync(empId);
-        }
-        
-        public WebApplication008.WCFServicioDatos.EmployeeDetails[] ObtenerEmpleadosPorNombre(string Name) {
-            return base.Channel.ObtenerEmpleadosPorNombre(Name);
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.EmployeeDetails[]> ObtenerEmpleadosPorNombreAsync(string Name) {
-            return base.Channel.ObtenerEmpleadosPorNombreAsync(Name);
-        }
-        
-        public int ModificarEmpleado(WebApplication008.WCFServicioDatos.EmployeeDetails emp) {
-            return base.Channel.ModificarEmpleado(emp);
-        }
-        
-        public System.Threading.Tasks.Task<int> ModificarEmpleadoAsync(WebApplication008.WCFServicioDatos.EmployeeDetails emp) {
-            return base.Channel.ModificarEmpleadoAsync(emp);
-        }
-        
-        public int BorrarEmpleadoPorId(int empId) {
-            return base.Channel.BorrarEmpleadoPorId(empId);
-        }
-        
-        public System.Threading.Tasks.Task<int> BorrarEmpleadoPorIdAsync(int empId) {
-            return base.Channel.BorrarEmpleadoPorIdAsync(empId);
-        }
-        
-        public int InsertarUsuario(WebApplication008.WCFServicioDatos.Usuario usuario) {
-            return base.Channel.InsertarUsuario(usuario);
-        }
-        
-        public System.Threading.Tasks.Task<int> InsertarUsuarioAsync(WebApplication008.WCFServicioDatos.Usuario usuario) {
-            return base.Channel.InsertarUsuarioAsync(usuario);
-        }
-        
-        public WebApplication008.WCFServicioDatos.Usuario[] ListarTodosUsuarios() {
-            return base.Channel.ListarTodosUsuarios();
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario[]> ListarTodosUsuariosAsync() {
-            return base.Channel.ListarTodosUsuariosAsync();
-        }
-        
-        public WebApplication008.WCFServicioDatos.Usuario ObtenerUsuarioPorId(int id) {
-            return base.Channel.ObtenerUsuarioPorId(id);
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario> ObtenerUsuarioPorIdAsync(int id) {
-            return base.Channel.ObtenerUsuarioPorIdAsync(id);
-        }
-        
-        public WebApplication008.WCFServicioDatos.Usuario[] ObtenerUsuariosPorNombre(string Name) {
-            return base.Channel.ObtenerUsuariosPorNombre(Name);
-        }
-        
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuario[]> ObtenerUsuariosPorNombreAsync(string Name) {
-            return base.Channel.ObtenerUsuariosPorNombreAsync(Name);
-        }
-        
-        public int ModificarUsuario(WebApplication008.WCFServicioDatos.Usuario user) {
-            return base.Channel.ModificarUsuario(user);
-        }
-        
-        public System.Threading.Tasks.Task<int> ModificarUsuarioAsync(WebApplication008.WCFServicioDatos.Usuario user) {
-            return base.Channel.ModificarUsuarioAsync(user);
-        }
-        
-        public int BorrarUsuarioPorId(int Id) {
-            return base.Channel.BorrarUsuarioPorId(Id);
-        }
-        
-        public System.Threading.Tasks.Task<int> BorrarUsuarioPorIdAsync(int Id) {
-            return base.Channel.BorrarUsuarioPorIdAsync(Id);
-        }
-        
         public bool CrearUsuario(WebApplication008.WCFServicioDatos.Usuarios usuarios) {
             return base.Channel.CrearUsuario(usuarios);
         }
@@ -1438,6 +1026,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuarios[]> ConsultarUsuariosPorLoginAsync(string login) {
             return base.Channel.ConsultarUsuariosPorLoginAsync(login);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Usuarios[] ConsultarUsuariosPorRol(string rol) {
+            return base.Channel.ConsultarUsuariosPorRol(rol);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Usuarios[]> ConsultarUsuariosPorRolAsync(string rol) {
+            return base.Channel.ConsultarUsuariosPorRolAsync(rol);
         }
         
         public bool EditarUsuario(WebApplication008.WCFServicioDatos.Usuarios users) {

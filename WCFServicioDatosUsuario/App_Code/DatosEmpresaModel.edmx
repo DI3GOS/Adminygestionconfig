@@ -25,17 +25,6 @@
           <Property Name="tipo_actividad" Type="varchar" MaxLength="100" />
           <Property Name="calificacion" Type="decimal" Precision="5" Scale="2" />
         </EntityType>
-        <EntityType Name="EmployeeDetails">
-          <Key>
-            <PropertyRef Name="EmpId" />
-          </Key>
-          <Property Name="EmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="50" />
-          <Property Name="Address" Type="varchar" MaxLength="50" />
-          <Property Name="Age" Type="int" />
-          <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="WorkType" Type="varchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Materias">
           <Key>
             <PropertyRef Name="id_materia" />
@@ -61,15 +50,6 @@
           <Property Name="id_materia" Type="int" />
           <Property Name="id_usuario" Type="int" />
         </EntityType>
-        <EntityType Name="Productos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
-          <Property Name="Precio" Type="float" />
-          <Property Name="Stock" Type="int" />
-        </EntityType>
         <EntityType Name="Trabajos">
           <Key>
             <PropertyRef Name="id_trabajo" />
@@ -80,17 +60,6 @@
           <Property Name="tipo_trabajo" Type="varchar" MaxLength="100" />
           <Property Name="archivo" Type="varchar" MaxLength="255" />
           <Property Name="fecha_entrega" Type="date" />
-        </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="25" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" />
-          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -106,45 +75,17 @@
         <EntityContainer Name="LoginDBModelStoreContainer">
           <EntitySet Name="Asistencias" EntityType="Self.Asistencias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias" EntityType="Self.Materias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias_docentes" EntityType="Self.Materias_docentes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias_estudiantes" EntityType="Self.Materias_estudiantes" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trabajos" EntityType="Self.Trabajos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LoginDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="EmployeeDetails">
-          <Key>
-            <PropertyRef Name="EmpId" />
-          </Key>
-          <Property Name="EmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="Usuario">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="LoginDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="EmployeeDetails" EntityType="Self.EmployeeDetails" />
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <EntitySet Name="Productos" EntityType="LoginDBModel.Productos" />
           <EntitySet Name="Asistencias" EntityType="LoginDBModel.Asistencias" />
           <EntitySet Name="Calificaciones" EntityType="LoginDBModel.Calificaciones" />
           <EntitySet Name="Materias" EntityType="LoginDBModel.Materias" />
@@ -153,15 +94,6 @@
           <EntitySet Name="Trabajos" EntityType="LoginDBModel.Trabajos" />
           <EntitySet Name="Usuarios" EntityType="LoginDBModel.Usuarios" />
         </EntityContainer>
-        <EntityType Name="Productos">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Precio" Type="Double" />
-          <Property Name="Stock" Type="Int32" />
-        </EntityType>
         <EntityType Name="Asistencias">
           <Key>
             <PropertyRef Name="id_asistencia" />
@@ -227,7 +159,7 @@
           <Property Name="apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="rol" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="clave" Type="String" />
+          <Property Name="clave" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -235,40 +167,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LoginDBModelStoreContainer" CdmEntityContainer="LoginDBEntities">
-          <EntitySetMapping Name="EmployeeDetails">
-            <EntityTypeMapping TypeName="LoginDBModel.EmployeeDetails">
-              <MappingFragment StoreEntitySet="EmployeeDetails">
-                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Usuario">
-            <EntityTypeMapping TypeName="LoginDBModel.Usuario">
-              <MappingFragment StoreEntitySet="Usuario">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Productos">
-            <EntityTypeMapping TypeName="LoginDBModel.Productos">
-              <MappingFragment StoreEntitySet="Productos">
-                <ScalarProperty Name="Stock" ColumnName="Stock" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Asistencias">
             <EntityTypeMapping TypeName="LoginDBModel.Asistencias">
               <MappingFragment StoreEntitySet="Asistencias">

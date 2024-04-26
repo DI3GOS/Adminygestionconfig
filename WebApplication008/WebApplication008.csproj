@@ -137,6 +137,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
+    <Compile Include="Controllers\MateriasEstudianteController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +146,7 @@
     <Compile Include="Models\AsistenciasModel.cs" />
     <Compile Include="Models\EmployeesModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\MateriaEstudianteModel.cs" />
     <Compile Include="Models\MateriaModel.cs" />
     <Compile Include="Models\Materias_estudiantesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -193,12 +195,6 @@
     <None Include="Connected Services\WCFServicioDatos\Service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.EmployeeDetails.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Usuario.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Materias.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -266,10 +262,13 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\MateriaEstudiante\Index.cshtml" />
-    <Content Include="Views\MateriaEstudiante\Create.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Index.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Create.cshtml" />
     <Content Include="Views\Asistencia\Create.cshtml" />
     <Content Include="Views\Asistencia\Index.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Details.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Edit.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

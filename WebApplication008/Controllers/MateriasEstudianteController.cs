@@ -16,6 +16,33 @@ namespace WebApplication008.Controllers
             List<Materias_estudiantesModel> lstRecord = new List<Materias_estudiantesModel>();
             var myListaMaterias = myCliente.ListarMateriasEstudiantes();
 
+            var myMaterias = myCliente.ListarMaterias();
+            var myUsuarios = myCliente.ConsultarUsuarios();
+
+            //Muestro los roles
+            List<SelectListItem> roles = new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Administrador", Value = "Administrador" },
+                new SelectListItem { Text = "Docente", Value = "Docente" },
+                new SelectListItem { Text = "Estudiante", Value = "Estudiante" }
+            };            
+            ViewData["Rol"] = roles;
+
+            //Muestro los roles
+            List<SelectListItem> Estudiantes = new List<SelectListItem>();
+
+            //Lleno el SelectListItem
+            foreach (var itemUsu in myUsuarios)
+            {
+                Estudiantes.Add(new SelectListItem
+                {
+                    Text = itemUsu.id_usuario.ToString(),
+                    Value = itemUsu.nombre
+                });
+            }
+
+            ViewData["Estudiantes"] = Estudiantes;
+
             foreach (var item in myListaMaterias)
             {
                 Materias_estudiantesModel materia = new Materias_estudiantesModel();

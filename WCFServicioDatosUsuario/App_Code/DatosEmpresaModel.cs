@@ -28,16 +28,6 @@ public partial class Calificaciones
     public Nullable<decimal> calificacion { get; set; }
 }
 
-public partial class EmployeeDetails
-{
-    public int EmpId { get; set; }
-    public string Name { get; set; }
-    public string Address { get; set; }
-    public Nullable<int> Age { get; set; }
-    public Nullable<decimal> Salary { get; set; }
-    public string WorkType { get; set; }
-}
-
 public partial class Materias
 {
     public int id_materia { get; set; }
@@ -60,14 +50,6 @@ public partial class Materias_estudiantes
     public Nullable<int> id_usuario { get; set; }
 }
 
-public partial class Productos
-{
-    public int Id { get; set; }
-    public string Descripcion { get; set; }
-    public Nullable<double> Precio { get; set; }
-    public Nullable<int> Stock { get; set; }
-}
-
 public partial class Trabajos
 {
     public int id_trabajo { get; set; }
@@ -76,16 +58,6 @@ public partial class Trabajos
     public string tipo_trabajo { get; set; }
     public string archivo { get; set; }
     public Nullable<System.DateTime> fecha_entrega { get; set; }
-}
-
-public partial class Usuario
-{
-    public int Id { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public string Nombre { get; set; }
-    public string Apellido { get; set; }
-    public string Email { get; set; }
 }
 
 public partial class Usuarios

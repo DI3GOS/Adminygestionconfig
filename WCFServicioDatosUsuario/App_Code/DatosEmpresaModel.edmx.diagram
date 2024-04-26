@@ -5,12 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f7284d3e533a4a058ec15ec30b72b868" Name="Diagram1">
-        <EntityTypeShape EntityType="LoginDBModel.EmployeeDetails" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginDBModel.Usuario" Width="1.5" PointX="3.125" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LoginDBModel.Productos" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="LoginDBModel.Asistencias" Width="1.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LoginDBModel.Asistencias" Width="1.5" PointX="1.375" PointY="3.875" />
         <EntityTypeShape EntityType="LoginDBModel.Calificaciones" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="LoginDBModel.Materias" Width="1.5" PointX="5.75" PointY="3.75" />
+        <EntityTypeShape EntityType="LoginDBModel.Materias" Width="1.5" PointX="3.625" PointY="4" />
         <EntityTypeShape EntityType="LoginDBModel.Materias_docentes" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="LoginDBModel.Materias_estudiantes" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="LoginDBModel.Trabajos" Width="1.5" PointX="4.75" PointY="6.75" />
