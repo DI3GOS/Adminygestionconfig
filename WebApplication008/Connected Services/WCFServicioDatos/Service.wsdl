@@ -181,6 +181,126 @@
   <wsdl:message name="IService_EliminarMateriaPorId_OutputMessage">
     <wsdl:part name="parameters" element="tns:EliminarMateriaPorIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_CrearAsistencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearAsistencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearAsistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarAsistencia_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarAsistencia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarAsistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAsistencias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAsistencias" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAsistencias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAsistenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAsistenciasPorIdMateria_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAsistenciasPorIdMateria" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarAsistenciasPorIdMateria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAsistenciasPorIdMateriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAsistenciaPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAsistenciaPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarAsistenciaPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarAsistenciaPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearCalificaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCalificaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearCalificaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearCalificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarCalificacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarCalificacion" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarCalificacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarCalificacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificacionesPorIdUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificacionesPorIdUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificacionesPorIdUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificacionesPorIdUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarCalificacionPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCalificacionPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarCalificacionPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarCalificacionPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateriasEstudiantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateriasEstudiantes" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateriasEstudiantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateriasEstudiantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateriaEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateriaEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateriaEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateriaEstudianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasEstudiantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantes" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasEstudiantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasEstudiantesPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantesPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasEstudiantesPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantesPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaEstudiantesPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaEstudiantesPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaEstudiantesPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaEstudiantesPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateriasDocentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateriasDocentes" />
+  </wsdl:message>
+  <wsdl:message name="IService_CrearMateriasDocentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CrearMateriasDocentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateriaDocente_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateriaDocente" />
+  </wsdl:message>
+  <wsdl:message name="IService_EditarMateriaDocente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarMateriaDocenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasDocentes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasDocentes" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasDocentes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasDocentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasDocentesPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasDocentesPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriasDocentesPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriasDocentesPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaDocentesPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaDocentesPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_EliminarMateriaDocentesPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EliminarMateriaDocentesPorIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="InsertarEmpleado">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertarEmpleado" message="tns:IService_InsertarEmpleado_InputMessage" />
@@ -297,6 +417,86 @@
     <wsdl:operation name="EliminarMateriaPorId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMateriaPorId" message="tns:IService_EliminarMateriaPorId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMateriaPorIdResponse" message="tns:IService_EliminarMateriaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearAsistencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearAsistencia" message="tns:IService_CrearAsistencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearAsistenciaResponse" message="tns:IService_CrearAsistencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarAsistencia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarAsistencia" message="tns:IService_EditarAsistencia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarAsistenciaResponse" message="tns:IService_EditarAsistencia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAsistencias">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarAsistencias" message="tns:IService_ListarAsistencias_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarAsistenciasResponse" message="tns:IService_ListarAsistencias_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAsistenciasPorIdMateria">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarAsistenciasPorIdMateria" message="tns:IService_ListarAsistenciasPorIdMateria_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarAsistenciasPorIdMateriaResponse" message="tns:IService_ListarAsistenciasPorIdMateria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAsistenciaPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarAsistenciaPorId" message="tns:IService_EliminarAsistenciaPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarAsistenciaPorIdResponse" message="tns:IService_EliminarAsistenciaPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearCalificaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearCalificaciones" message="tns:IService_CrearCalificaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearCalificacionesResponse" message="tns:IService_CrearCalificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarCalificacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarCalificacion" message="tns:IService_EditarCalificacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarCalificacionResponse" message="tns:IService_EditarCalificacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarCalificaciones" message="tns:IService_ListarCalificaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarCalificacionesResponse" message="tns:IService_ListarCalificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificacionesPorIdUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario" message="tns:IService_ListarCalificacionesPorIdUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuarioResponse" message="tns:IService_ListarCalificacionesPorIdUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCalificacionPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarCalificacionPorId" message="tns:IService_EliminarCalificacionPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarCalificacionPorIdResponse" message="tns:IService_EliminarCalificacionPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateriasEstudiantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearMateriasEstudiantes" message="tns:IService_CrearMateriasEstudiantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearMateriasEstudiantesResponse" message="tns:IService_CrearMateriasEstudiantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateriaEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarMateriaEstudiante" message="tns:IService_EditarMateriaEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarMateriaEstudianteResponse" message="tns:IService_EditarMateriaEstudiante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasEstudiantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantes" message="tns:IService_ListarMateriasEstudiantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantesResponse" message="tns:IService_ListarMateriasEstudiantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasEstudiantesPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId" message="tns:IService_ListarMateriasEstudiantesPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse" message="tns:IService_ListarMateriasEstudiantesPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaEstudiantesPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMateriaEstudiantesPorId" message="tns:IService_EliminarMateriaEstudiantesPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMateriaEstudiantesPorIdResponse" message="tns:IService_EliminarMateriaEstudiantesPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateriasDocentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CrearMateriasDocentes" message="tns:IService_CrearMateriasDocentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CrearMateriasDocentesResponse" message="tns:IService_CrearMateriasDocentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateriaDocente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarMateriaDocente" message="tns:IService_EditarMateriaDocente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarMateriaDocenteResponse" message="tns:IService_EditarMateriaDocente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasDocentes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasDocentes" message="tns:IService_ListarMateriasDocentes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasDocentesResponse" message="tns:IService_ListarMateriasDocentes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasDocentesPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasDocentesPorId" message="tns:IService_ListarMateriasDocentesPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasDocentesPorIdResponse" message="tns:IService_ListarMateriasDocentesPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaDocentesPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/EliminarMateriaDocentesPorId" message="tns:IService_EliminarMateriaDocentesPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/EliminarMateriaDocentesPorIdResponse" message="tns:IService_EliminarMateriaDocentesPorId_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -555,6 +755,186 @@
     </wsdl:operation>
     <wsdl:operation name="EliminarMateriaPorId">
       <soap:operation soapAction="http://tempuri.org/IService/EliminarMateriaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearAsistencia">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearAsistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarAsistencia">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarAsistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAsistencias">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAsistencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAsistenciasPorIdMateria">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarAsistenciasPorIdMateria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarAsistenciaPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarAsistenciaPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearCalificaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearCalificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarCalificacion">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarCalificacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificaciones">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarCalificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificacionesPorIdUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarCalificacionPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarCalificacionPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateriasEstudiantes">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearMateriasEstudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateriaEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarMateriaEstudiante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasEstudiantes">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasEstudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasEstudiantesPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaEstudiantesPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMateriaEstudiantesPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CrearMateriasDocentes">
+      <soap:operation soapAction="http://tempuri.org/IService/CrearMateriasDocentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditarMateriaDocente">
+      <soap:operation soapAction="http://tempuri.org/IService/EditarMateriaDocente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasDocentes">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasDocentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriasDocentesPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasDocentesPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EliminarMateriaDocentesPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/EliminarMateriaDocentesPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

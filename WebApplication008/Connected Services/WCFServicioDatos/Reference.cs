@@ -606,6 +606,378 @@ namespace WebApplication008.WCFServicioDatos {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Asistencias", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Asistencias : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string asistioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> fechaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_asistenciaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_materiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_usuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string asistio {
+            get {
+                return this.asistioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.asistioField, value) != true)) {
+                    this.asistioField = value;
+                    this.RaisePropertyChanged("asistio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> fecha {
+            get {
+                return this.fechaField;
+            }
+            set {
+                if ((this.fechaField.Equals(value) != true)) {
+                    this.fechaField = value;
+                    this.RaisePropertyChanged("fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_asistencia {
+            get {
+                return this.id_asistenciaField;
+            }
+            set {
+                if ((this.id_asistenciaField.Equals(value) != true)) {
+                    this.id_asistenciaField = value;
+                    this.RaisePropertyChanged("id_asistencia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_materia {
+            get {
+                return this.id_materiaField;
+            }
+            set {
+                if ((this.id_materiaField.Equals(value) != true)) {
+                    this.id_materiaField = value;
+                    this.RaisePropertyChanged("id_materia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_usuario {
+            get {
+                return this.id_usuarioField;
+            }
+            set {
+                if ((this.id_usuarioField.Equals(value) != true)) {
+                    this.id_usuarioField = value;
+                    this.RaisePropertyChanged("id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Calificaciones", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Calificaciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> calificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_calificacionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_materiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_usuarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tipo_actividadField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> calificacion {
+            get {
+                return this.calificacionField;
+            }
+            set {
+                if ((this.calificacionField.Equals(value) != true)) {
+                    this.calificacionField = value;
+                    this.RaisePropertyChanged("calificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_calificacion {
+            get {
+                return this.id_calificacionField;
+            }
+            set {
+                if ((this.id_calificacionField.Equals(value) != true)) {
+                    this.id_calificacionField = value;
+                    this.RaisePropertyChanged("id_calificacion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_materia {
+            get {
+                return this.id_materiaField;
+            }
+            set {
+                if ((this.id_materiaField.Equals(value) != true)) {
+                    this.id_materiaField = value;
+                    this.RaisePropertyChanged("id_materia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_usuario {
+            get {
+                return this.id_usuarioField;
+            }
+            set {
+                if ((this.id_usuarioField.Equals(value) != true)) {
+                    this.id_usuarioField = value;
+                    this.RaisePropertyChanged("id_usuario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tipo_actividad {
+            get {
+                return this.tipo_actividadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tipo_actividadField, value) != true)) {
+                    this.tipo_actividadField = value;
+                    this.RaisePropertyChanged("tipo_actividad");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Materias_estudiantes", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Materias_estudiantes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_materiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_materia_estudianteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_usuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_materia {
+            get {
+                return this.id_materiaField;
+            }
+            set {
+                if ((this.id_materiaField.Equals(value) != true)) {
+                    this.id_materiaField = value;
+                    this.RaisePropertyChanged("id_materia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_materia_estudiante {
+            get {
+                return this.id_materia_estudianteField;
+            }
+            set {
+                if ((this.id_materia_estudianteField.Equals(value) != true)) {
+                    this.id_materia_estudianteField = value;
+                    this.RaisePropertyChanged("id_materia_estudiante");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_usuario {
+            get {
+                return this.id_usuarioField;
+            }
+            set {
+                if ((this.id_usuarioField.Equals(value) != true)) {
+                    this.id_usuarioField = value;
+                    this.RaisePropertyChanged("id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Materias_docentes", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class Materias_docentes : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_materiaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_materia_docenteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> id_usuarioField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_materia {
+            get {
+                return this.id_materiaField;
+            }
+            set {
+                if ((this.id_materiaField.Equals(value) != true)) {
+                    this.id_materiaField = value;
+                    this.RaisePropertyChanged("id_materia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_materia_docente {
+            get {
+                return this.id_materia_docenteField;
+            }
+            set {
+                if ((this.id_materia_docenteField.Equals(value) != true)) {
+                    this.id_materia_docenteField = value;
+                    this.RaisePropertyChanged("id_materia_docente");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> id_usuario {
+            get {
+                return this.id_usuarioField;
+            }
+            set {
+                if ((this.id_usuarioField.Equals(value) != true)) {
+                    this.id_usuarioField = value;
+                    this.RaisePropertyChanged("id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WCFServicioDatos.IService")]
     public interface IService {
@@ -783,6 +1155,126 @@ namespace WebApplication008.WCFServicioDatos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaPorIdResponse")]
         System.Threading.Tasks.Task<bool> EliminarMateriaPorIdAsync(int idMateria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearAsistencia", ReplyAction="http://tempuri.org/IService/CrearAsistenciaResponse")]
+        bool CrearAsistencia(WebApplication008.WCFServicioDatos.Asistencias asistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearAsistencia", ReplyAction="http://tempuri.org/IService/CrearAsistenciaResponse")]
+        System.Threading.Tasks.Task<bool> CrearAsistenciaAsync(WebApplication008.WCFServicioDatos.Asistencias asistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarAsistencia", ReplyAction="http://tempuri.org/IService/EditarAsistenciaResponse")]
+        bool EditarAsistencia(WebApplication008.WCFServicioDatos.Asistencias asistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarAsistencia", ReplyAction="http://tempuri.org/IService/EditarAsistenciaResponse")]
+        System.Threading.Tasks.Task<bool> EditarAsistenciaAsync(WebApplication008.WCFServicioDatos.Asistencias asistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistencias", ReplyAction="http://tempuri.org/IService/ListarAsistenciasResponse")]
+        WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistencias();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistencias", ReplyAction="http://tempuri.org/IService/ListarAsistenciasResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistenciasPorIdMateria", ReplyAction="http://tempuri.org/IService/ListarAsistenciasPorIdMateriaResponse")]
+        WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorIdMateria(int idMateria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistenciasPorIdMateria", ReplyAction="http://tempuri.org/IService/ListarAsistenciasPorIdMateriaResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasPorIdMateriaAsync(int idMateria);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAsistenciaPorId", ReplyAction="http://tempuri.org/IService/EliminarAsistenciaPorIdResponse")]
+        bool EliminarAsistenciaPorId(int idAsistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarAsistenciaPorId", ReplyAction="http://tempuri.org/IService/EliminarAsistenciaPorIdResponse")]
+        System.Threading.Tasks.Task<bool> EliminarAsistenciaPorIdAsync(int idAsistencia);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearCalificaciones", ReplyAction="http://tempuri.org/IService/CrearCalificacionesResponse")]
+        bool CrearCalificaciones(WebApplication008.WCFServicioDatos.Calificaciones calificaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearCalificaciones", ReplyAction="http://tempuri.org/IService/CrearCalificacionesResponse")]
+        System.Threading.Tasks.Task<bool> CrearCalificacionesAsync(WebApplication008.WCFServicioDatos.Calificaciones calificaciones);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarCalificacion", ReplyAction="http://tempuri.org/IService/EditarCalificacionResponse")]
+        bool EditarCalificacion(WebApplication008.WCFServicioDatos.Calificaciones calificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarCalificacion", ReplyAction="http://tempuri.org/IService/EditarCalificacionResponse")]
+        System.Threading.Tasks.Task<bool> EditarCalificacionAsync(WebApplication008.WCFServicioDatos.Calificaciones calificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificaciones", ReplyAction="http://tempuri.org/IService/ListarCalificacionesResponse")]
+        WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificaciones();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificaciones", ReplyAction="http://tempuri.org/IService/ListarCalificacionesResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario", ReplyAction="http://tempuri.org/IService/ListarCalificacionesPorIdUsuarioResponse")]
+        WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorIdUsuario(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario", ReplyAction="http://tempuri.org/IService/ListarCalificacionesPorIdUsuarioResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesPorIdUsuarioAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarCalificacionPorId", ReplyAction="http://tempuri.org/IService/EliminarCalificacionPorIdResponse")]
+        bool EliminarCalificacionPorId(int idCalificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarCalificacionPorId", ReplyAction="http://tempuri.org/IService/EliminarCalificacionPorIdResponse")]
+        System.Threading.Tasks.Task<bool> EliminarCalificacionPorIdAsync(int idCalificacion);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearMateriasEstudiantes", ReplyAction="http://tempuri.org/IService/CrearMateriasEstudiantesResponse")]
+        bool CrearMateriasEstudiantes(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearMateriasEstudiantes", ReplyAction="http://tempuri.org/IService/CrearMateriasEstudiantesResponse")]
+        System.Threading.Tasks.Task<bool> CrearMateriasEstudiantesAsync(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarMateriaEstudiante", ReplyAction="http://tempuri.org/IService/EditarMateriaEstudianteResponse")]
+        bool EditarMateriaEstudiante(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarMateriaEstudiante", ReplyAction="http://tempuri.org/IService/EditarMateriaEstudianteResponse")]
+        System.Threading.Tasks.Task<bool> EditarMateriaEstudianteAsync(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantes", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesResponse")]
+        WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantes", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse")]
+        WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaEstudiantesPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaEstudiantesPorIdResponse")]
+        bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaEstudiantesPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaEstudiantesPorIdResponse")]
+        System.Threading.Tasks.Task<bool> EliminarMateriaEstudiantesPorIdAsync(int idMateriaEstudiante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearMateriasDocentes", ReplyAction="http://tempuri.org/IService/CrearMateriasDocentesResponse")]
+        bool CrearMateriasDocentes(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/CrearMateriasDocentes", ReplyAction="http://tempuri.org/IService/CrearMateriasDocentesResponse")]
+        System.Threading.Tasks.Task<bool> CrearMateriasDocentesAsync(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarMateriaDocente", ReplyAction="http://tempuri.org/IService/EditarMateriaDocenteResponse")]
+        bool EditarMateriaDocente(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarMateriaDocente", ReplyAction="http://tempuri.org/IService/EditarMateriaDocenteResponse")]
+        System.Threading.Tasks.Task<bool> EditarMateriaDocenteAsync(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentes", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesResponse")]
+        WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentes", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesPorIdResponse")]
+        WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorId(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesPorIdResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesPorIdAsync(int idUsuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaDocentesPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaDocentesPorIdResponse")]
+        bool EliminarMateriaDocentesPorId(int idMateriaDocente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaDocentesPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaDocentesPorIdResponse")]
+        System.Threading.Tasks.Task<bool> EliminarMateriaDocentesPorIdAsync(int idMateriaDocente);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1042,6 +1534,166 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<bool> EliminarMateriaPorIdAsync(int idMateria) {
             return base.Channel.EliminarMateriaPorIdAsync(idMateria);
+        }
+        
+        public bool CrearAsistencia(WebApplication008.WCFServicioDatos.Asistencias asistencia) {
+            return base.Channel.CrearAsistencia(asistencia);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CrearAsistenciaAsync(WebApplication008.WCFServicioDatos.Asistencias asistencia) {
+            return base.Channel.CrearAsistenciaAsync(asistencia);
+        }
+        
+        public bool EditarAsistencia(WebApplication008.WCFServicioDatos.Asistencias asistencia) {
+            return base.Channel.EditarAsistencia(asistencia);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditarAsistenciaAsync(WebApplication008.WCFServicioDatos.Asistencias asistencia) {
+            return base.Channel.EditarAsistenciaAsync(asistencia);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistencias() {
+            return base.Channel.ListarAsistencias();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasAsync() {
+            return base.Channel.ListarAsistenciasAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorIdMateria(int idMateria) {
+            return base.Channel.ListarAsistenciasPorIdMateria(idMateria);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasPorIdMateriaAsync(int idMateria) {
+            return base.Channel.ListarAsistenciasPorIdMateriaAsync(idMateria);
+        }
+        
+        public bool EliminarAsistenciaPorId(int idAsistencia) {
+            return base.Channel.EliminarAsistenciaPorId(idAsistencia);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarAsistenciaPorIdAsync(int idAsistencia) {
+            return base.Channel.EliminarAsistenciaPorIdAsync(idAsistencia);
+        }
+        
+        public bool CrearCalificaciones(WebApplication008.WCFServicioDatos.Calificaciones calificaciones) {
+            return base.Channel.CrearCalificaciones(calificaciones);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CrearCalificacionesAsync(WebApplication008.WCFServicioDatos.Calificaciones calificaciones) {
+            return base.Channel.CrearCalificacionesAsync(calificaciones);
+        }
+        
+        public bool EditarCalificacion(WebApplication008.WCFServicioDatos.Calificaciones calificacion) {
+            return base.Channel.EditarCalificacion(calificacion);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditarCalificacionAsync(WebApplication008.WCFServicioDatos.Calificaciones calificacion) {
+            return base.Channel.EditarCalificacionAsync(calificacion);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificaciones() {
+            return base.Channel.ListarCalificaciones();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesAsync() {
+            return base.Channel.ListarCalificacionesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorIdUsuario(int idUsuario) {
+            return base.Channel.ListarCalificacionesPorIdUsuario(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesPorIdUsuarioAsync(int idUsuario) {
+            return base.Channel.ListarCalificacionesPorIdUsuarioAsync(idUsuario);
+        }
+        
+        public bool EliminarCalificacionPorId(int idCalificacion) {
+            return base.Channel.EliminarCalificacionPorId(idCalificacion);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarCalificacionPorIdAsync(int idCalificacion) {
+            return base.Channel.EliminarCalificacionPorIdAsync(idCalificacion);
+        }
+        
+        public bool CrearMateriasEstudiantes(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante) {
+            return base.Channel.CrearMateriasEstudiantes(materiaEstudiante);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CrearMateriasEstudiantesAsync(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante) {
+            return base.Channel.CrearMateriasEstudiantesAsync(materiaEstudiante);
+        }
+        
+        public bool EditarMateriaEstudiante(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante) {
+            return base.Channel.EditarMateriaEstudiante(materiaEstudiante);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditarMateriaEstudianteAsync(WebApplication008.WCFServicioDatos.Materias_estudiantes materiaEstudiante) {
+            return base.Channel.EditarMateriaEstudianteAsync(materiaEstudiante);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantes() {
+            return base.Channel.ListarMateriasEstudiantes();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesAsync() {
+            return base.Channel.ListarMateriasEstudiantesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario) {
+            return base.Channel.ListarMateriasEstudiantesPorId(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int idUsuario) {
+            return base.Channel.ListarMateriasEstudiantesPorIdAsync(idUsuario);
+        }
+        
+        public bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante) {
+            return base.Channel.EliminarMateriaEstudiantesPorId(idMateriaEstudiante);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarMateriaEstudiantesPorIdAsync(int idMateriaEstudiante) {
+            return base.Channel.EliminarMateriaEstudiantesPorIdAsync(idMateriaEstudiante);
+        }
+        
+        public bool CrearMateriasDocentes(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente) {
+            return base.Channel.CrearMateriasDocentes(materiaDocente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> CrearMateriasDocentesAsync(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente) {
+            return base.Channel.CrearMateriasDocentesAsync(materiaDocente);
+        }
+        
+        public bool EditarMateriaDocente(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente) {
+            return base.Channel.EditarMateriaDocente(materiaDocente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EditarMateriaDocenteAsync(WebApplication008.WCFServicioDatos.Materias_docentes materiaDocente) {
+            return base.Channel.EditarMateriaDocenteAsync(materiaDocente);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentes() {
+            return base.Channel.ListarMateriasDocentes();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesAsync() {
+            return base.Channel.ListarMateriasDocentesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorId(int idUsuario) {
+            return base.Channel.ListarMateriasDocentesPorId(idUsuario);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesPorIdAsync(int idUsuario) {
+            return base.Channel.ListarMateriasDocentesPorIdAsync(idUsuario);
+        }
+        
+        public bool EliminarMateriaDocentesPorId(int idMateriaDocente) {
+            return base.Channel.EliminarMateriaDocentesPorId(idMateriaDocente);
+        }
+        
+        public System.Threading.Tasks.Task<bool> EliminarMateriaDocentesPorIdAsync(int idMateriaDocente) {
+            return base.Channel.EliminarMateriaDocentesPorIdAsync(idMateriaDocente);
         }
     }
 }

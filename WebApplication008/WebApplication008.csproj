@@ -207,6 +207,18 @@
     <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Usuarios.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Asistencias.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Calificaciones.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Materias_docentes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Materias_estudiantes.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -253,6 +265,8 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\MateriaEstudiante\Index.cshtml" />
+    <Content Include="Views\MateriaEstudiante\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

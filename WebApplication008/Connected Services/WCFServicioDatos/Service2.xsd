@@ -83,4 +83,64 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMaterias" nillable="true" type="tns:ArrayOfMaterias" />
+  <xs:complexType name="Asistencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_asistencia" type="xs:int" />
+      <xs:element minOccurs="0" name="id_materia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asistencias" nillable="true" type="tns:Asistencias" />
+  <xs:complexType name="ArrayOfAsistencias">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Asistencias" nillable="true" type="tns:Asistencias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAsistencias" nillable="true" type="tns:ArrayOfAsistencias" />
+  <xs:complexType name="Calificaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="calificacion" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id_calificacion" type="xs:int" />
+      <xs:element minOccurs="0" name="id_materia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tipo_actividad" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Calificaciones" nillable="true" type="tns:Calificaciones" />
+  <xs:complexType name="ArrayOfCalificaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Calificaciones" nillable="true" type="tns:Calificaciones" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalificaciones" nillable="true" type="tns:ArrayOfCalificaciones" />
+  <xs:complexType name="Materias_estudiantes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_materia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_materia_estudiante" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Materias_estudiantes" nillable="true" type="tns:Materias_estudiantes" />
+  <xs:complexType name="ArrayOfMaterias_estudiantes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Materias_estudiantes" nillable="true" type="tns:Materias_estudiantes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterias_estudiantes" nillable="true" type="tns:ArrayOfMaterias_estudiantes" />
+  <xs:complexType name="Materias_docentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id_materia" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id_materia_docente" type="xs:int" />
+      <xs:element minOccurs="0" name="id_usuario" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Materias_docentes" nillable="true" type="tns:Materias_docentes" />
+  <xs:complexType name="ArrayOfMaterias_docentes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Materias_docentes" nillable="true" type="tns:Materias_docentes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMaterias_docentes" nillable="true" type="tns:ArrayOfMaterias_docentes" />
 </xs:schema>
