@@ -1,0 +1,56 @@
+﻿@model IEnumerable<WebApplication008.Models.AsistenciasModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Asistencias</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_materia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Asistio)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_materia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Asistio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_asistencia }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_asistencia }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_asistencia })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div>
+    @Html.ActionLink("Regresar al menu", "Index", "Home")
+</div>
