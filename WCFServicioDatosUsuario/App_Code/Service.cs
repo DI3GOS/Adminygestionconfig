@@ -770,6 +770,97 @@ public class Service : IService
             return bandera;
         }
     }
+    //UPDATE Asistencias BY id
+    public bool EditarAsistencia(Asistencias asistencia)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            LoginDBEntities contextDb = new LoginDBEntities();
+            Asistencias asistenciaObj = new Asistencias();
+            asistenciaObj.id_asistencia = asistencia.id_asistencia;
+            asistenciaObj.id_usuario = asistencia.id_usuario;
+            asistenciaObj.id_materia = asistencia.id_materia;
+            asistenciaObj.fecha = asistencia.fecha;
+            asistenciaObj.asistio = asistencia.asistio;
+
+            contextDb.Entry(asistencia).State = EntityState.Modified;
+            Retval = contextDb.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
+
+    //READ Consultar Asitencias
+    public List<Asistencias> ListarAsistencias()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Asistencias> asistencialist = new List<Asistencias>();
+
+        var lstAsistencias = from k in contextDb.Asistencias select k;
+
+        foreach (var item in lstAsistencias)
+        {
+            Asistencias asistencia = new Asistencias();
+            asistencia.id_asistencia = item.id_asistencia;
+            asistencia.id_usuario = item.id_usuario;
+            asistencia.id_materia = item.id_materia;
+            asistencia.fecha = item.fecha;
+            asistencia.asistio = item.asistio;
+
+            asistencialist.Add(asistencia);
+        }
+        return asistencialist;
+    }
+
+    //READ Consultar Asistencias por Id materia
+    public List<Asistencias> ListarAsistenciasPorIdMateria(int idMateria)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Asistencias> asistencialist = new List<Asistencias>();
+
+        var lstAsistencias = from k in contextDb.Asistencias
+                             where k.id_materia == idMateria
+                             select k;
+
+        foreach (var item in lstAsistencias)
+        {
+            Asistencias asistencia = new Asistencias();
+            asistencia.id_asistencia = item.id_asistencia;
+            asistencia.id_usuario = item.id_usuario;
+            asistencia.id_materia = item.id_materia;
+            asistencia.fecha = item.fecha;
+            asistencia.asistio = item.asistio;
+
+            asistencialist.Add(asistencia);
+        }
+        return asistencialist;
+    }
+
+    //DELETE Asistencia por id 
+    public bool EliminarAsistenciaPorId(int idAsistencia)
+    {
+        int Retval = 0;
+        bool bandera = false;
+        try
+        {
+            Asistencias asistencia = new Asistencias();
+            asistencia.id_asistencia = idAsistencia;
+            DBcontext.Entry(asistencia).State = EntityState.Deleted;
+            Retval = DBcontext.SaveChanges();
+            bandera = Retval == 1 ? true : false;
+            return bandera;
+        }
+        catch (Exception)
+        {
+            return bandera;
+        }
+    }
     #endregion
 
     #region "Calificaciones"
