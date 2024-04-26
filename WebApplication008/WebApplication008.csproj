@@ -145,6 +145,7 @@
     <Compile Include="Models\EmployeesModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MateriaModel.cs" />
+    <Compile Include="Models\Materias_estudiantesModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
