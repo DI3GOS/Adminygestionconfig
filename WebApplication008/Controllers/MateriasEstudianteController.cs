@@ -111,15 +111,30 @@ namespace WebApplication008.Controllers
 
         // POST: MateriasEstudiante/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Materias_estudiantesModel objAsistencia, FormCollection collection)
         {
+            WCFServicioDatos.ServiceClient myMateriaEsutiante = new WCFServicioDatos.ServiceClient();
+            bool resVal = false;
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    WCFServicioDatos.Materias_estudiantes materiaEstuadiante = new WCFServicioDatos.Materias_estudiantes();
 
-                return RedirectToAction("Index");
+                    materiaEstuadiante.id_materia_estudiante = objAsistencia.Id_materia_estudiante;
+                    materiaEstuadiante.id_materia = objAsistencia.Id_materia;
+                    materiaEstuadiante.id_usuario = objAsistencia.Id_Usuario;
+
+
+                    resVal = myMateriaEsutiante.EditarMateriaEstudiante(materiaEstuadiante); //actualiza objeto Asitencias
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
-            catch
+            catch (Exception)
             {
                 return View();
             }
@@ -128,7 +143,37 @@ namespace WebApplication008.Controllers
         // GET: MateriasEstudiante/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myMateriaEsutiantes = new WCFServicioDatos.ServiceClient();
+            var myMateriaEsutiante = myMateriaEsutiantes.ListarMateriasEstudiantesPorId(id);
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var mEstudiante = new Materias_estudiantesModel();
+                    mEstudiante.Id_materia_estudiante = myMateriaEsutiante[0].id_materia_estudiante;
+                    mEstudiante.Id_materia = myMateriaEsutiante[0].id_materia;
+                    mEstudiante.Id_Usuario = myMateriaEsutiante[0].id_usuario;
+
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(mEstudiante);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: MateriasEstudiante/Delete/5
@@ -137,8 +182,8 @@ namespace WebApplication008.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                WCFServicioDatos.ServiceClient myMateriaEsutiantes = new WCFServicioDatos.ServiceClient();
+                bool Rev = myMateriaEsutiantes.EliminarMateriaEstudiantesPorId(id);
                 return RedirectToAction("Index");
             }
             catch
