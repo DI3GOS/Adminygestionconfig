@@ -51,7 +51,26 @@ namespace WebApplication008.Controllers
         // GET: Calificacion/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var objCalificacion = myCliente.ListarCalificacionesPorIdUsuario(id);
+
+            var MyCalificacion = new CalificacionesModel();
+
+            MyCalificacion.Id_calificacion = id;
+            MyCalificacion.Id_materia = objCalificacion[0].id_materia;
+            MyCalificacion.Id_usuario = objCalificacion[0].id_usuario;
+            MyCalificacion.calificacion = objCalificacion[0].calificacion.Value;
+            MyCalificacion.tipo_actividad = objCalificacion[0].tipo_actividad;
+
+
+            if (Session["UserName"] != null)
+            {
+                return View(MyCalificacion);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         // GET: Calificacion/Create
@@ -103,20 +122,70 @@ namespace WebApplication008.Controllers
         // GET: Calificacion/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCalificaciones = new WCFServicioDatos.ServiceClient();
+            var myCalificacion = myCalificaciones.ListarCalificacionesPorIdUsuario(id).ToList();
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var calificacion = new CalificacionesModel();
+
+                    calificacion.Id_calificacion = myCalificacion[0].id_calificacion;
+                    calificacion.Id_materia = myCalificacion[0].id_materia;
+                    calificacion.Id_usuario = myCalificacion[0].id_usuario;
+                    calificacion.calificacion = myCalificacion[0].calificacion.Value;
+                    calificacion.tipo_actividad = myCalificacion[0].tipo_actividad;
+
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(calificacion);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Calificacion/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Calificaciones objCalificacion, FormCollection collection)
         {
+            WCFServicioDatos.ServiceClient myCalificaciones = new WCFServicioDatos.ServiceClient();
+            bool resVal = false;
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    WCFServicioDatos.Calificaciones calificacion = new WCFServicioDatos.Calificaciones();
 
-                return RedirectToAction("Index");
+                    calificacion.id_calificacion = objCalificacion.id_calificacion;
+                    calificacion.id_materia = objCalificacion.id_materia;
+                    calificacion.id_usuario = objCalificacion.id_usuario;
+                    calificacion.calificacion = objCalificacion.calificacion;
+                    calificacion.tipo_actividad = objCalificacion.tipo_actividad;
+
+
+                    resVal = myCalificaciones.EditarCalificacion(calificacion); //actualiza objeto Materias
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
-            catch
+            catch (Exception)
             {
                 return View();
             }
@@ -125,7 +194,40 @@ namespace WebApplication008.Controllers
         // GET: Calificacion/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCalificaciones = new WCFServicioDatos.ServiceClient();
+            var myCalificacion = myCalificaciones.ListarCalificacionesPorIdUsuario(id);
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var calificacion = new CalificacionesModel();
+                    calificacion.Id_calificacion = myCalificacion[0].id_calificacion;
+                    calificacion.Id_materia = myCalificacion[0].id_materia;
+                    calificacion.Id_usuario = myCalificacion[0].id_usuario;
+                    calificacion.calificacion = myCalificacion[0].calificacion.Value;
+                    calificacion.tipo_actividad = myCalificacion[0].tipo_actividad;
+
+
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(calificacion);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Calificacion/Delete/5
@@ -134,8 +236,8 @@ namespace WebApplication008.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                WCFServicioDatos.ServiceClient myCalificacion = new WCFServicioDatos.ServiceClient();
+                bool Rev = myCalificacion.EliminarCalificacionPorId(id);
                 return RedirectToAction("Index");
             }
             catch
