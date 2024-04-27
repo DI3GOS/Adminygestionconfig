@@ -24,13 +24,11 @@ namespace WebApplication008.Models
                 
         public string Fecha { get; set; }
 
-        [Required(ErrorMessage = "Ingrese asistencia")]
-        [DataType(DataType.Text)]
+        [Required(ErrorMessage = "Ingrese asistencia Si/No")]        
         [Display(Name = "asistio")]
-        [MinLength(5, ErrorMessage = "Debe ingresar minimo 4 caracter")]
-        [MaxLength(5, ErrorMessage = "Debe ingresar maximo 5 caracter")]
+        [MinLength(2, ErrorMessage = "Debe ingresar minimo 2 caracteres")]
+        [MaxLength(5, ErrorMessage = "Debe ingresar maximo 5 caracteres")]
         [StringLength(5)]
         public string Asistio { get; set; }
-
     }
 }

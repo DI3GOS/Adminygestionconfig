@@ -91,8 +91,8 @@ namespace WebApplication008.Controllers
                 try
                 {
                     WCFServicioDatos.Asistencias myAsistencia = new WCFServicioDatos.Asistencias();
-                    //TblUsuario.Id = 0;
-                    //myAsistencia.id_asistencia = objAsistencia.Id_asistencia;
+                    
+                    myAsistencia.id_asistencia = objAsistencia.Id_asistencia;
                     myAsistencia.id_materia = objAsistencia.Id_materia;
                     myAsistencia.id_usuario = objAsistencia.Id_usuario;
                     myAsistencia.fecha = DateTime.Parse(objAsistencia.Fecha);
