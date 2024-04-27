@@ -139,6 +139,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListarTrabajos">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTrabajosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarTrabajosResult" nillable="true" type="q10:ArrayOfTrabajos" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListarTrabajosPorIdMateria">
     <xs:complexType>
       <xs:sequence>
@@ -149,7 +161,7 @@
   <xs:element name="ListarTrabajosPorIdMateriaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarTrabajosPorIdMateriaResult" nillable="true" type="q10:ArrayOfTrabajos" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarTrabajosPorIdMateriaResult" nillable="true" type="q11:ArrayOfTrabajos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -164,7 +176,7 @@
   <xs:element name="ListarTrabajosPorIdMateriaPorUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarTrabajosPorIdMateriaPorUsuarioResult" nillable="true" type="q11:ArrayOfTrabajos" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarTrabajosPorIdMateriaPorUsuarioResult" nillable="true" type="q12:ArrayOfTrabajos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -185,7 +197,7 @@
   <xs:element name="CrearMateria">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materia" nillable="true" type="q12:Materias" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materia" nillable="true" type="q13:Materias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -199,7 +211,7 @@
   <xs:element name="EditarMateria">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materia" nillable="true" type="q13:Materias" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materia" nillable="true" type="q14:Materias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -218,7 +230,7 @@
   <xs:element name="ListarMateriasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasResult" nillable="true" type="q14:ArrayOfMaterias" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasResult" nillable="true" type="q15:ArrayOfMaterias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,7 +244,7 @@
   <xs:element name="ListarMateriasPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasPorIdResult" nillable="true" type="q15:ArrayOfMaterias" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasPorIdResult" nillable="true" type="q16:ArrayOfMaterias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -253,7 +265,7 @@
   <xs:element name="CrearAsistencia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="asistencia" nillable="true" type="q16:Asistencias" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="asistencia" nillable="true" type="q17:Asistencias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -267,7 +279,7 @@
   <xs:element name="EditarAsistencia">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="asistencia" nillable="true" type="q17:Asistencias" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="asistencia" nillable="true" type="q18:Asistencias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -286,7 +298,7 @@
   <xs:element name="ListarAsistenciasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarAsistenciasResult" nillable="true" type="q18:ArrayOfAsistencias" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarAsistenciasResult" nillable="true" type="q19:ArrayOfAsistencias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -300,7 +312,7 @@
   <xs:element name="ListarAsistenciasPorIdMateriaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarAsistenciasPorIdMateriaResult" nillable="true" type="q19:ArrayOfAsistencias" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarAsistenciasPorIdMateriaResult" nillable="true" type="q20:ArrayOfAsistencias" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -321,7 +333,7 @@
   <xs:element name="CrearCalificaciones">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="calificaciones" nillable="true" type="q20:Calificaciones" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="calificaciones" nillable="true" type="q21:Calificaciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -335,7 +347,7 @@
   <xs:element name="EditarCalificacion">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="calificacion" nillable="true" type="q21:Calificaciones" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="calificacion" nillable="true" type="q22:Calificaciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -354,7 +366,7 @@
   <xs:element name="ListarCalificacionesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarCalificacionesResult" nillable="true" type="q22:ArrayOfCalificaciones" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarCalificacionesResult" nillable="true" type="q23:ArrayOfCalificaciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -368,7 +380,7 @@
   <xs:element name="ListarCalificacionesPorIdUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarCalificacionesPorIdUsuarioResult" nillable="true" type="q23:ArrayOfCalificaciones" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarCalificacionesPorIdUsuarioResult" nillable="true" type="q24:ArrayOfCalificaciones" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -389,7 +401,7 @@
   <xs:element name="CrearMateriasEstudiantes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaEstudiante" nillable="true" type="q24:Materias_estudiantes" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaEstudiante" nillable="true" type="q25:Materias_estudiantes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -403,7 +415,7 @@
   <xs:element name="EditarMateriaEstudiante">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaEstudiante" nillable="true" type="q25:Materias_estudiantes" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaEstudiante" nillable="true" type="q26:Materias_estudiantes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -422,7 +434,7 @@
   <xs:element name="ListarMateriasEstudiantesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesResult" nillable="true" type="q26:ArrayOfMaterias_estudiantes" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesResult" nillable="true" type="q27:ArrayOfMaterias_estudiantes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -434,7 +446,7 @@
   <xs:element name="ListarMateriaEstudianteResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriaEstudianteResult" nillable="true" type="q27:ArrayOfMateriaEstudiante" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriaEstudianteResult" nillable="true" type="q28:ArrayOfMateriaEstudiante" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -448,7 +460,7 @@
   <xs:element name="ListarMateriasEstudiantesPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesPorIdResult" nillable="true" type="q28:ArrayOfMaterias_estudiantes" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesPorIdResult" nillable="true" type="q29:ArrayOfMaterias_estudiantes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -469,7 +481,7 @@
   <xs:element name="CrearMateriasDocentes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q29:Materias_docentes" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q30:Materias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -483,7 +495,7 @@
   <xs:element name="EditarMateriaDocente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q30:Materias_docentes" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q31:Materias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -502,7 +514,7 @@
   <xs:element name="ListarMateriasDocentesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesResult" nillable="true" type="q31:ArrayOfMaterias_docentes" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesResult" nillable="true" type="q32:ArrayOfMaterias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -516,7 +528,7 @@
   <xs:element name="ListarMateriasDocentesPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesPorIdResult" nillable="true" type="q32:ArrayOfMaterias_docentes" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesPorIdResult" nillable="true" type="q33:ArrayOfMaterias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

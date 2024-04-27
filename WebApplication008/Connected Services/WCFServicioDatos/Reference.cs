@@ -901,6 +901,12 @@ namespace WebApplication008.WCFServicioDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EditarTrabajo", ReplyAction="http://tempuri.org/IService/EditarTrabajoResponse")]
         System.Threading.Tasks.Task<bool> EditarTrabajoAsync(WebApplication008.WCFServicioDatos.Trabajos trabajo);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajos", ReplyAction="http://tempuri.org/IService/ListarTrabajosResponse")]
+        WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajos();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajos", ReplyAction="http://tempuri.org/IService/ListarTrabajosResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Trabajos[]> ListarTrabajosAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajosPorIdMateria", ReplyAction="http://tempuri.org/IService/ListarTrabajosPorIdMateriaResponse")]
         WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorIdMateria(int id_materia);
         
@@ -1181,6 +1187,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<bool> EditarTrabajoAsync(WebApplication008.WCFServicioDatos.Trabajos trabajo) {
             return base.Channel.EditarTrabajoAsync(trabajo);
+        }
+        
+        public WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajos() {
+            return base.Channel.ListarTrabajos();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Trabajos[]> ListarTrabajosAsync() {
+            return base.Channel.ListarTrabajosAsync();
         }
         
         public WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorIdMateria(int id_materia) {

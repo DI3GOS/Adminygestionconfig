@@ -10,7 +10,7 @@ using System.Text;
 [ServiceContract]
 public interface IService
 {
-	#region "Usuarios"
+    #region "Usuarios"
 
     [OperationContract]
     bool CrearUsuario(Usuarios usuarios);  //C
@@ -44,6 +44,9 @@ public interface IService
 
     [OperationContract]
     bool EditarTrabajo(Trabajos trabajo);
+
+    [OperationContract]
+    List<Trabajos> ListarTrabajos();
 
     [OperationContract]
     List<Trabajos> ListarTrabajosPorIdMateria(int id_materia);

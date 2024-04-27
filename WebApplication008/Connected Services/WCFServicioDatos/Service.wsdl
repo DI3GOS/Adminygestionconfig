@@ -67,6 +67,12 @@
   <wsdl:message name="IService_EditarTrabajo_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditarTrabajoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajos_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajos" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_ListarTrabajosPorIdMateria_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateria" />
   </wsdl:message>
@@ -282,6 +288,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/EditarTrabajo" message="tns:IService_EditarTrabajo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/EditarTrabajoResponse" message="tns:IService_EditarTrabajo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListarTrabajos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajos" message="tns:IService_ListarTrabajos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosResponse" message="tns:IService_ListarTrabajos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarTrabajosPorIdMateria">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateria" message="tns:IService_ListarTrabajosPorIdMateria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateriaResponse" message="tns:IService_ListarTrabajosPorIdMateria_OutputMessage" />
@@ -484,6 +494,15 @@
     </wsdl:operation>
     <wsdl:operation name="EditarTrabajo">
       <soap:operation soapAction="http://tempuri.org/IService/EditarTrabajo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTrabajos">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTrabajos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

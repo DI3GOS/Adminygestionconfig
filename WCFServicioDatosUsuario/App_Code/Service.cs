@@ -285,6 +285,30 @@ public class Service : IService
         }
     }
 
+
+    //READ Trabajos ALL
+    public List<Trabajos> ListarTrabajos()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Trabajos> trabajolist = new List<Trabajos>();
+
+        var lstTrabajos = from k in contextDb.Trabajos select k;
+
+        foreach (var item in lstTrabajos)
+        {
+            Trabajos trabajo = new Trabajos();
+            trabajo.id_trabajo = item.id_trabajo;
+            trabajo.id_usuario = item.id_usuario;
+            trabajo.id_materia = item.id_materia;
+            trabajo.tipo_trabajo = item.tipo_trabajo.Trim();
+            trabajo.archivo = item.archivo.Trim();
+            trabajo.fecha_entrega = item.fecha_entrega;
+
+            trabajolist.Add(trabajo);
+        }
+        return trabajolist;
+    }
+
     //READ Trabajos por id Materia
     public List<Trabajos> ListarTrabajosPorIdMateria(int id_materia)
     {
