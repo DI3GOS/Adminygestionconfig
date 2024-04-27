@@ -140,6 +140,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\MateriasEstudianteController.cs" />
+    <Compile Include="Controllers\TrabajosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,6 +152,7 @@
     <Compile Include="Models\MateriaEstudianteModel.cs" />
     <Compile Include="Models\MateriaModel.cs" />
     <Compile Include="Models\Materias_estudiantesModel.cs" />
+    <Compile Include="Models\TrabajoModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -278,7 +280,9 @@
     <Content Include="Views\Calificacion\Create.cshtml" />
     <Content Include="Views\Asistencia\Edit.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Trabajos\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
