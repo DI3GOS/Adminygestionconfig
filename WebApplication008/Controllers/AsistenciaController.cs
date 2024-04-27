@@ -51,7 +51,27 @@ namespace WebApplication008.Controllers
         // GET: Asistencia/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var objAsitencia = myCliente.ListarAsistenciasPorIdMateria(id);
+
+            var MyAsistencia = new AsistenciasModel();
+
+            MyAsistencia.Id_asistencia = id;
+
+            MyAsistencia.Id_materia = objAsitencia[0].id_materia;
+
+            MyAsistencia.Id_usuario = objAsitencia[0].id_usuario;
+
+            MyAsistencia.Fecha = objAsitencia[0].fecha.ToShortDateString();
+
+            if (Session["UserName"] != null)
+            {
+                return View(MyAsistencia);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         // GET: Asistencia/Create
@@ -187,6 +207,7 @@ namespace WebApplication008.Controllers
                     asistencia.Id_usuario = myMateria[0].id_usuario;
                     asistencia.Id_materia = myMateria[0].id_materia;
                     asistencia.Asistio = myMateria[0].asistio;
+                    asistencia.Fecha = myMateria[0].fecha.ToShortDateString();
 
                     if (Session["UserName"] != null)
                     {
