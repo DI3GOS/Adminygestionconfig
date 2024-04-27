@@ -276,6 +276,7 @@
     <Content Include="Views\Asistencia\Create.cshtml" />
     <Content Include="Views\Calificacion\Index.cshtml" />
     <Content Include="Views\Calificacion\Create.cshtml" />
+    <Content Include="Views\Asistencia\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -1,25 +1,22 @@
 ﻿@model WebApplication008.Models.AsistenciasModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
-    if (!Model.Fecha.IsEmpty())
-    {
-        @Model.Fecha.ToString()
-    }
 }
 
-<h2>Crear</h2>
+<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-        <h4>Asistencias</h4>
+        <h4>AsistenciasModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id_asistencia)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Id_usuario, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -54,7 +51,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Crear" class="btn btn-outline-success" />
+                <input type="submit" value="Guardar" class="btn btn-outline-success" />
             </div>
         </div>
     </div>

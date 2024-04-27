@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebApplication008.Models;
+using WebApplication008.WCFServicioDatos;
 
 namespace WebApplication008.Controllers
 {
@@ -102,20 +103,70 @@ namespace WebApplication008.Controllers
         // GET: Asistencia/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myAsistente = new WCFServicioDatos.ServiceClient();
+            var varMateria = myAsistente.ListarAsistenciasPorIdMateria(id).ToList();
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var asistencia = new AsistenciasModel();
+
+                    asistencia.Id_asistencia = varMateria[0].id_materia;
+                    asistencia.Id_materia = varMateria[0].id_materia;
+                    asistencia.Id_usuario = varMateria[0].id_usuario;
+                    asistencia.Asistio= varMateria[0].asistio;
+                    asistencia.Fecha = varMateria[0].fecha.ToString();
+
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(asistencia);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Asistencia/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(AsistenciasModel objAsistencia, FormCollection collection)
         {
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            bool resVal = false;
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    WCFServicioDatos.Asistencias asistencias = new WCFServicioDatos.Asistencias();
 
-                return RedirectToAction("Index");
+                    asistencias.id_asistencia = objAsistencia.Id_asistencia;
+                    asistencias.id_materia = objAsistencia.Id_materia;
+                    asistencias.id_usuario = objAsistencia.Id_usuario;
+                    asistencias.asistio = objAsistencia.Asistio;
+                    asistencias.fecha = DateTime.Parse(objAsistencia.Fecha);
+
+
+                    resVal = myCliente.EditarAsistencia(asistencias); //actualiza objeto Asitencias
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
-            catch
+            catch (Exception)
             {
                 return View();
             }
@@ -124,7 +175,37 @@ namespace WebApplication008.Controllers
         // GET: Asistencia/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var myMateria = myCliente.ListarAsistenciasPorIdMateria(id);
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var asistencia = new AsistenciasModel();
+                    asistencia.Id_asistencia = myMateria[0].id_asistencia;
+                    asistencia.Id_usuario = myMateria[0].id_usuario;
+                    asistencia.Id_materia = myMateria[0].id_materia;
+                    asistencia.Asistio = myMateria[0].asistio;
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(asistencia);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Asistencia/Delete/5
@@ -133,8 +214,8 @@ namespace WebApplication008.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                WCFServicioDatos.ServiceClient myAsistencia = new WCFServicioDatos.ServiceClient();
+                bool Rev = myAsistencia.EliminarAsistenciaPorId(id);
                 return RedirectToAction("Index");
             }
             catch
