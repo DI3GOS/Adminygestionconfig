@@ -6,13 +6,17 @@ using System.Web;
 
 namespace WebApplication008.Models
 {
-    public class Materias_estudiantesModel
+    public class CalificacionesModel
     {
         [Key]
-        public int Id_materia_estudiante { get; set; }
+        public int Id_calificacion { get; set; }
+
+        public int Id_usuario { get; set; }
 
         public int Id_materia { get; set; }
-                
-        public int Id_Usuario { get; set; }
+
+        public string tipo_actividad { get; set; }
+
+        public decimal calificacion { get; set; }
     }
 }

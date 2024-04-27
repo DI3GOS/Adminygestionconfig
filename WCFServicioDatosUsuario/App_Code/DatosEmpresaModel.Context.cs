@@ -30,4 +30,5 @@ public partial class LoginDBEntities : DbContext
     public virtual DbSet<Materias_estudiantes> Materias_estudiantes { get; set; }
     public virtual DbSet<Trabajos> Trabajos { get; set; }
     public virtual DbSet<Usuarios> Usuarios { get; set; }
+    public virtual DbSet<MateriaEstudiante> MateriaEstudiante { get; set; }
 }

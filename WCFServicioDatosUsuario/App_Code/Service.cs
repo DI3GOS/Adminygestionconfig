@@ -7,8 +7,10 @@ using System.Security.Cryptography;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web;
 using System.Web.Services.Description;
 using System.Xml.Linq;
+
 
 // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código, en svc y en el archivo de configuración.
 public class Service : IService
@@ -770,53 +772,117 @@ public class Service : IService
         LoginDBEntities contextDb = new LoginDBEntities();
         List<Materias_estudiantes> materiaEstudiantelist = new List<Materias_estudiantes>();
 
-        /*
-        //var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes select k;
-        //foreach (var item in lstMateriasEstudiantes)
-        //{
-        //    Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
-        //    materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
-        //    materiaEstudiantes.id_materia = item.id_materia;
-        //    materiaEstudiantes.id_usuario = item.id_usuario;
-
-
-        //    materiaEstudiantelist.Add(materiaEstudiantes);
-        //}
-        //return materiaEstudiantelist;
-
-        //consulto si el estudiante tiene materias        
-
-        //var queryold = from Materia_estudiante in contextDb.Materias_estudiantes
-        //            join materia in contextDb.Materias on Materia_estudiante.id_materia equals materia.id_materia                    
-        //            select new {Id_materia_estudiante = Materia_estudiante.id_materia_estudiante,  
-        //                    Id_materia = materia.id_materia, Nombre = materia.nombre };
-        */
-
-        //consulto si el estudiante tiene materias
-        var query = from Materia_estudiante in contextDb.Materias_estudiantes
-                    join materia in contextDb.Materias on Materia_estudiante.id_materia equals materia.id_materia
-                    join usuario in contextDb.Usuarios on Materia_estudiante.id_usuario equals usuario.id_usuario
-                    select new
-                    {
-                        Id = Materia_estudiante.id_materia_estudiante,
-                        Rol = usuario.rol,
-                        Nombre = usuario.nombre,
-                        Apellido = usuario.apellido,
-                        Materia = materia.nombre + " " + materia.descripcion,
-                        Id_usuario = usuario.id_usuario,
-                        Id_materia = materia.id_materia
-                    };
-
-        foreach (var item in query)
+        try
         {
-            Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
-            materiaEstudiantes.id_materia_estudiante = item.Id;
-            materiaEstudiantes.id_materia = item.Id_materia;
-            materiaEstudiantes.id_usuario = item.Id_usuario;
+            var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes select k;
+            foreach (var item in lstMateriasEstudiantes)
+            {
+                Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+                materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
+                materiaEstudiantes.id_materia = item.id_materia;
+                materiaEstudiantes.id_usuario = item.id_usuario;
 
-            materiaEstudiantelist.Add(materiaEstudiantes);
+
+                materiaEstudiantelist.Add(materiaEstudiantes);
+            }
+            return materiaEstudiantelist;
         }
-        return materiaEstudiantelist;
+        catch (Exception ex)
+        {
+            string path = HttpContext.Current.Request.MapPath("~");
+            MyLog oLog = new MyLog(path);
+            oLog.Add("Error:" + ex.Message + " - source:" + ex.Source);            
+            return materiaEstudiantelist;
+        }
+        /*
+        //consulto si el estudiante tiene materias
+        //var queryold = from Materia_estudiante in contextDb.Materias_estudiantes
+        //               join materia in contextDb.Materias on Materia_estudiante.id_materia equals materia.id_materia
+        //               select new
+        //               {
+        //                   Id_materia_estudiante = Materia_estudiante.id_materia_estudiante,
+        //                   Id_materia = materia.id_materia,
+        //                   Nombre = materia.nombre
+        //               };
+        */
+    }
+
+    public List<MateriaEstudiante> ListarMateriaEstudiante()
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<MateriaEstudiante> materiaEstudiantelist = new List<MateriaEstudiante>();
+        List<Materias_estudiantes> Materias_estudianteslist = new List<Materias_estudiantes>();
+        List<Materias> materialist = new List<Materias>();
+        List<Usuarios> usuariosList = new List<Usuarios>();
+
+        try
+        {
+            //consulto las materias 
+            var lstMaterias = from k in contextDb.Materias select k;
+            foreach (var item in lstMaterias)
+            {
+                Materias materiaEst = new Materias();
+                materiaEst.id_materia = item.id_materia;
+                materiaEst.nombre = item.nombre;
+                materiaEst.codigo = item.codigo;
+                materiaEst.descripcion = item.descripcion;
+
+                materialist.Add(materiaEst);
+            }
+
+            //consulto los usuarios con rol Estudiante
+            var lstEstudiantes = from k in contextDb.Usuarios
+                                 where k.rol == "Estudiante"
+                                 select k;
+            foreach (var item in lstEstudiantes)
+            {
+                Usuarios listaEstudiantesUsuarios = new Usuarios();
+                listaEstudiantesUsuarios.id_usuario = item.id_usuario;
+                listaEstudiantesUsuarios.nombre = item.nombre;
+                listaEstudiantesUsuarios.apellido = item.apellido;
+                listaEstudiantesUsuarios.rol = item.rol;
+                usuariosList.Add(listaEstudiantesUsuarios);
+            }
+
+            //consulto las materias primero
+            var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes 
+                                         where  k.id_usuario == usuariosList[0].id_usuario
+                                         && k.id_materia == materialist[0].id_materia
+                                         select k;
+            foreach (var item in lstMateriasEstudiantes)
+            {
+                Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+                materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
+                materiaEstudiantes.id_materia = item.id_materia;
+                materiaEstudiantes.id_usuario = item.id_usuario;
+                Materias_estudianteslist.Add(materiaEstudiantes);
+            }
+
+
+            var lstVistaMateriaEstudiantes = from k in contextDb.MateriaEstudiante
+                                             where k.Id == Materias_estudianteslist[0].id_materia_estudiante
+                                             select k;
+
+            foreach (var item in lstVistaMateriaEstudiantes)
+            {                
+                MateriaEstudiante materiaEstudiantes = new MateriaEstudiante();
+                materiaEstudiantes.Id = item.Id;
+                materiaEstudiantes.Materia = item.Materia;
+                materiaEstudiantes.Nombre = item.Nombre;
+                materiaEstudiantes.Apellido = item.Apellido;
+                materiaEstudiantes.Rol = item.Rol;
+
+                materiaEstudiantelist.Add(materiaEstudiantes);
+            }
+            return materiaEstudiantelist;
+        }
+        catch (Exception ex)
+        {
+            string path = HttpContext.Current.Request.MapPath("~");
+            MyLog oLog = new MyLog(path);
+            oLog.Add("Error:" + ex.Message + " - StackTrace:" + ex.StackTrace);
+            return materiaEstudiantelist;
+        }
     }
 
     //READ Consultar MateriasEstudiantes por id usuario

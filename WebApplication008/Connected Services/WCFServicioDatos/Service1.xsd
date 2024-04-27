@@ -426,6 +426,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ListarMateriaEstudiante">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarMateriaEstudianteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriaEstudianteResult" nillable="true" type="q27:ArrayOfMateriaEstudiante" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListarMateriasEstudiantesPorId">
     <xs:complexType>
       <xs:sequence>
@@ -436,7 +448,7 @@
   <xs:element name="ListarMateriasEstudiantesPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesPorIdResult" nillable="true" type="q27:ArrayOfMaterias_estudiantes" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasEstudiantesPorIdResult" nillable="true" type="q28:ArrayOfMaterias_estudiantes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -457,7 +469,7 @@
   <xs:element name="CrearMateriasDocentes">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q28:Materias_docentes" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q29:Materias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -471,7 +483,7 @@
   <xs:element name="EditarMateriaDocente">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q29:Materias_docentes" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="materiaDocente" nillable="true" type="q30:Materias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -490,7 +502,7 @@
   <xs:element name="ListarMateriasDocentesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesResult" nillable="true" type="q30:ArrayOfMaterias_docentes" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesResult" nillable="true" type="q31:ArrayOfMaterias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -504,7 +516,7 @@
   <xs:element name="ListarMateriasDocentesPorIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesPorIdResult" nillable="true" type="q31:ArrayOfMaterias_docentes" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="ListarMateriasDocentesPorIdResult" nillable="true" type="q32:ArrayOfMaterias_docentes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

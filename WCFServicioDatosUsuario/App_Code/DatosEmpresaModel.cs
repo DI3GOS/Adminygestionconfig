@@ -12,20 +12,44 @@ using System.Collections.Generic;
 
 public partial class Asistencias
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Asistencias()
+    {
+        this.id_usuario = 0;
+        this.id_materia = 0;
+    }
+
     public int id_asistencia { get; set; }
-    public Nullable<int> id_usuario { get; set; }
-    public Nullable<int> id_materia { get; set; }
-    public Nullable<System.DateTime> fecha { get; set; }
+    public int id_usuario { get; set; }
+    public int id_materia { get; set; }
+    public System.DateTime fecha { get; set; }
     public string asistio { get; set; }
 }
 
 public partial class Calificaciones
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Calificaciones()
+    {
+        this.id_usuario = 0;
+        this.id_materia = 0;
+        this.calificacion = 0.0m;
+    }
+
     public int id_calificacion { get; set; }
-    public Nullable<int> id_usuario { get; set; }
-    public Nullable<int> id_materia { get; set; }
+    public int id_usuario { get; set; }
+    public int id_materia { get; set; }
     public string tipo_actividad { get; set; }
     public Nullable<decimal> calificacion { get; set; }
+}
+
+public partial class MateriaEstudiante
+{
+    public int Id { get; set; }
+    public string Rol { get; set; }
+    public string Nombre { get; set; }
+    public string Apellido { get; set; }
+    public string Materia { get; set; }
 }
 
 public partial class Materias
@@ -38,23 +62,37 @@ public partial class Materias
 
 public partial class Materias_docentes
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Materias_docentes()
+    {
+        this.id_materia = 0;
+        this.id_usuario = 0;
+    }
+
     public int id_materia_docente { get; set; }
-    public Nullable<int> id_materia { get; set; }
-    public Nullable<int> id_usuario { get; set; }
+    public int id_materia { get; set; }
+    public int id_usuario { get; set; }
 }
 
 public partial class Materias_estudiantes
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+    public Materias_estudiantes()
+    {
+        this.id_materia = 0;
+        this.id_usuario = 0;
+    }
+
     public int id_materia_estudiante { get; set; }
-    public Nullable<int> id_materia { get; set; }
-    public Nullable<int> id_usuario { get; set; }
+    public int id_materia { get; set; }
+    public int id_usuario { get; set; }
 }
 
 public partial class Trabajos
 {
     public int id_trabajo { get; set; }
-    public Nullable<int> id_usuario { get; set; }
-    public Nullable<int> id_materia { get; set; }
+    public int id_usuario { get; set; }
+    public int id_materia { get; set; }
     public string tipo_trabajo { get; set; }
     public string archivo { get; set; }
     public Nullable<System.DateTime> fecha_entrega { get; set; }

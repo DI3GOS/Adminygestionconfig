@@ -26,7 +26,8 @@
                         if (!string.IsNullOrEmpty(Session["UserName"] as string))
                         {
                             @:<label style="height:27px; width:90%; text-align:right;">
-                                @:Hola &nbsp;@HttpContext.Current.Session["UserName"].ToString()&nbsp;
+                                @:Hola &nbsp;@HttpContext.Current.Session["UserName"].ToString()&nbsp; 
+                                @HttpContext.Current.Session["UserRol"].ToString()
                                 @Html.ActionLink("Cerrar Sesión", "Index", "Login", null, new { @class = "btn btn-outline-success btn-md" })
                             @: </label>
                         }

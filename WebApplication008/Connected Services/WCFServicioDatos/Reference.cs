@@ -154,13 +154,13 @@ namespace WebApplication008.WCFServicioDatos {
         private System.Nullable<System.DateTime> fecha_entregaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_materiaField;
+        private int id_materiaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_trabajoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_usuarioField;
+        private int id_usuarioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string tipo_trabajoField;
@@ -202,7 +202,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_materia {
+        public int id_materia {
             get {
                 return this.id_materiaField;
             }
@@ -228,7 +228,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_usuario {
+        public int id_usuario {
             get {
                 return this.id_usuarioField;
             }
@@ -369,16 +369,16 @@ namespace WebApplication008.WCFServicioDatos {
         private string asistioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> fechaField;
+        private System.DateTime fechaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_asistenciaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_materiaField;
+        private int id_materiaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_usuarioField;
+        private int id_usuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -404,7 +404,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> fecha {
+        public System.DateTime fecha {
             get {
                 return this.fechaField;
             }
@@ -430,7 +430,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_materia {
+        public int id_materia {
             get {
                 return this.id_materiaField;
             }
@@ -443,7 +443,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_usuario {
+        public int id_usuario {
             get {
                 return this.id_usuarioField;
             }
@@ -481,10 +481,10 @@ namespace WebApplication008.WCFServicioDatos {
         private int id_calificacionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_materiaField;
+        private int id_materiaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_usuarioField;
+        private int id_usuarioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string tipo_actividadField;
@@ -526,7 +526,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_materia {
+        public int id_materia {
             get {
                 return this.id_materiaField;
             }
@@ -539,7 +539,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_usuario {
+        public int id_usuario {
             get {
                 return this.id_usuarioField;
             }
@@ -584,13 +584,13 @@ namespace WebApplication008.WCFServicioDatos {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_materiaField;
+        private int id_materiaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_materia_estudianteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_usuarioField;
+        private int id_usuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -603,7 +603,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_materia {
+        public int id_materia {
             get {
                 return this.id_materiaField;
             }
@@ -629,7 +629,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_usuario {
+        public int id_usuario {
             get {
                 return this.id_usuarioField;
             }
@@ -637,6 +637,115 @@ namespace WebApplication008.WCFServicioDatos {
                 if ((this.id_usuarioField.Equals(value) != true)) {
                     this.id_usuarioField = value;
                     this.RaisePropertyChanged("id_usuario");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MateriaEstudiante", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class MateriaEstudiante : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApellidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MateriaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NombreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RolField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Apellido {
+            get {
+                return this.ApellidoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApellidoField, value) != true)) {
+                    this.ApellidoField = value;
+                    this.RaisePropertyChanged("Apellido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Materia {
+            get {
+                return this.MateriaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MateriaField, value) != true)) {
+                    this.MateriaField = value;
+                    this.RaisePropertyChanged("Materia");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Rol {
+            get {
+                return this.RolField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RolField, value) != true)) {
+                    this.RolField = value;
+                    this.RaisePropertyChanged("Rol");
                 }
             }
         }
@@ -661,13 +770,13 @@ namespace WebApplication008.WCFServicioDatos {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_materiaField;
+        private int id_materiaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_materia_docenteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> id_usuarioField;
+        private int id_usuarioField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -680,7 +789,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_materia {
+        public int id_materia {
             get {
                 return this.id_materiaField;
             }
@@ -706,7 +815,7 @@ namespace WebApplication008.WCFServicioDatos {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> id_usuario {
+        public int id_usuario {
             get {
                 return this.id_usuarioField;
             }
@@ -917,6 +1026,12 @@ namespace WebApplication008.WCFServicioDatos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantes", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriaEstudiante", ReplyAction="http://tempuri.org/IService/ListarMateriaEstudianteResponse")]
+        WebApplication008.WCFServicioDatos.MateriaEstudiante[] ListarMateriaEstudiante();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriaEstudiante", ReplyAction="http://tempuri.org/IService/ListarMateriaEstudianteResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.MateriaEstudiante[]> ListarMateriaEstudianteAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse")]
         WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario);
@@ -1234,6 +1349,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesAsync() {
             return base.Channel.ListarMateriasEstudiantesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.MateriaEstudiante[] ListarMateriaEstudiante() {
+            return base.Channel.ListarMateriaEstudiante();
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.MateriaEstudiante[]> ListarMateriaEstudianteAsync() {
+            return base.Channel.ListarMateriaEstudianteAsync();
         }
         
         public WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario) {

@@ -134,6 +134,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AsistenciaController.cs" />
+    <Compile Include="Controllers\CalificacionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
@@ -143,6 +145,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AsistenciasModel.cs" />
+    <Compile Include="Models\CalificacionesModel.cs" />
     <Compile Include="Models\EmployeesModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MateriaEstudianteModel.cs" />
@@ -215,6 +218,9 @@
     <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.Materias_estudiantes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WCFServicioDatos\WebApplication008.WCFServicioDatos.MateriaEstudiante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -263,11 +269,13 @@
     <Content Include="Views\Usuarios\Delete.cshtml" />
     <Content Include="Views\MateriasEstudiante\Index.cshtml" />
     <Content Include="Views\MateriasEstudiante\Create.cshtml" />
-    <Content Include="Views\Asistencia\Create.cshtml" />
     <Content Include="Views\Asistencia\Index.cshtml" />
     <Content Include="Views\MateriasEstudiante\Details.cshtml" />
     <Content Include="Views\MateriasEstudiante\Edit.cshtml" />
     <Content Include="Views\MateriasEstudiante\Delete.cshtml" />
+    <Content Include="Views\Asistencia\Create.cshtml" />
+    <Content Include="Views\Calificacion\Index.cshtml" />
+    <Content Include="Views\Calificacion\Create.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

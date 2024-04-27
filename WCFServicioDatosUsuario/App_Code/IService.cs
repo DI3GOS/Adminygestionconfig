@@ -119,6 +119,9 @@ public interface IService
     List<Materias_estudiantes> ListarMateriasEstudiantes();
 
     [OperationContract]
+    List<MateriaEstudiante> ListarMateriaEstudiante();
+
+    [OperationContract]
     List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int idUsuario);
 
     [OperationContract]

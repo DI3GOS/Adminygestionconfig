@@ -41,8 +41,8 @@ namespace WebApplication008.Models
         [StringLength(50)]
         public string Materia { get; set; }
 
-        public string Id_usuario { get; set; }
+        public int Id_usuario { get; set; }
 
-        public string Id_materia { get; set; }
+        public int Id_materia { get; set; }
     }
 }

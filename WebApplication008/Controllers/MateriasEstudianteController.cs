@@ -16,6 +16,8 @@ namespace WebApplication008.Controllers
             List<Materias_estudiantesModel> lstRecord = new List<Materias_estudiantesModel>();
             var myListaMaterias = myCliente.ListarMateriasEstudiantes();
 
+            var listaMaterias = myCliente.ListarMateriaEstudiante();
+
             var myMaterias = myCliente.ListarMaterias();
             var myUsuarios = myCliente.ConsultarUsuarios();
 
@@ -43,16 +45,25 @@ namespace WebApplication008.Controllers
 
             ViewData["Estudiantes"] = Estudiantes;
 
-            foreach (var item in myListaMaterias)
-            {
-                Materias_estudiantesModel materia = new Materias_estudiantesModel();
+            //foreach (var item in myListaMaterias)
+            //{
+            //    MateriaEstudianteModel materia = new MateriaEstudianteModel();
 
-                materia.Id_materia_estudiante = item.id_materia_estudiante;
-                materia.Id_materia = item.id_materia.ToString();
-                materia.Id_Usuario = item.id_usuario.ToString();
-                
-                lstRecord.Add(materia);
-            }
+            //    materia.Id = item.Id;
+            //    materia.Nombre = item.Nombre.Trim();
+            //    materia.Apellido = item.Apellido.Trim();
+            //    materia.Rol = item.Rol;
+            //    materia.Materia = item.Materia;
+
+            //    lstRecord.Add(materia);
+            //}
+                        
+            Materias_estudiantesModel materia = new Materias_estudiantesModel();
+            materia.Id_materia_estudiante = 7;
+            materia.Id_Usuario = 4;
+            materia.Id_materia = 2;
+
+            lstRecord.Add(materia);            
 
             if (Session["UserName"] != null)
             {

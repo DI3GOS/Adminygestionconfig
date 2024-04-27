@@ -193,6 +193,12 @@
   <wsdl:message name="IService_ListarMateriasEstudiantes_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantesResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_ListarMateriaEstudiante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriaEstudiante" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarMateriaEstudiante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMateriaEstudianteResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_ListarMateriasEstudiantesPorId_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarMateriasEstudiantesPorId" />
   </wsdl:message>
@@ -359,6 +365,10 @@
     <wsdl:operation name="ListarMateriasEstudiantes">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantes" message="tns:IService_ListarMateriasEstudiantes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantesResponse" message="tns:IService_ListarMateriasEstudiantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriaEstudiante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriaEstudiante" message="tns:IService_ListarMateriaEstudiante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarMateriaEstudianteResponse" message="tns:IService_ListarMateriaEstudiante_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarMateriasEstudiantesPorId">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId" message="tns:IService_ListarMateriasEstudiantesPorId_InputMessage" />
@@ -663,6 +673,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarMateriasEstudiantes">
       <soap:operation soapAction="http://tempuri.org/IService/ListarMateriasEstudiantes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMateriaEstudiante">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarMateriaEstudiante" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

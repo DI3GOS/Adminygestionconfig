@@ -8,30 +8,20 @@ namespace WebApplication008.Models
 {    
     public class AsistenciasModel
     {
+
+        public AsistenciasModel()
+        {
+            this.Id_usuario = 0;
+            this.Id_materia = 0;
+        }
+
         [Key]
         public int Id_asistencia { get; set; }
-
-        [Required(ErrorMessage = "Ingresar Id Usuario")]
-        [DataType(DataType.Text)]
-        [Display(Name = "id_usuario")]
-        [MinLength(3, ErrorMessage = "Debe ingresar el codigo del usuario")]
-        [MaxLength(15, ErrorMessage = "Debe ingresar maximo 15 caracteres")]
-        [StringLength(15)]
-        public string Id_usuario { get; set; }
-
-        [Required(ErrorMessage = "Ingresar Id Materia")]
-        [DataType(DataType.Text)]
-        [Display(Name = "id_materia")]
-        [MinLength(3, ErrorMessage = "Debe ingresar el codigo de la materia")]
-        [MaxLength(15, ErrorMessage = "Debe ingresar maximo 15 caracteres")]
-        [StringLength(15)]
-        public string Id_materia { get; set; }
-
-        [Required(ErrorMessage = "Ingresar Fecha")]
-        [DataType(DataType.Text)]
-        [Display(Name = "fecha")]
-        [MaxLength(10, ErrorMessage = "Debe ingresar maximo 10 caracteres")]
-        [StringLength(10)]
+                
+        public int Id_usuario { get; set; }
+        
+        public int Id_materia { get; set; }
+                
         public string Fecha { get; set; }
 
         [Required(ErrorMessage = "Ingrese asistencia")]
