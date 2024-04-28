@@ -28,6 +28,7 @@ namespace WebApplication008.Controllers
                     asistencia.Id_asistencia = item.id_asistencia;
                     asistencia.Id_materia = item.id_materia;
                     asistencia.Id_usuario = item.id_usuario;
+                    asistencia.Fecha = item.fecha.ToShortDateString();
                     asistencia.Asistio = item.asistio;
 
                     lstRecord.Add(asistencia);
@@ -52,7 +53,7 @@ namespace WebApplication008.Controllers
         public ActionResult Details(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var objAsitencia = myCliente.ListarAsistenciasPorIdMateria(id);
+            var objAsitencia = myCliente.ListarAsistenciasPorId(id);
 
             var MyAsistencia = new AsistenciasModel();
 

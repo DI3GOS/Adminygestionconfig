@@ -1,0 +1,51 @@
+﻿@model WebApplication008.Models.AsistenciasModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Asistencias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asistio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asistio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_asistencia }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>

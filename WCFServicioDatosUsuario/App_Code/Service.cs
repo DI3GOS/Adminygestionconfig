@@ -575,6 +575,30 @@ public class Service : IService
         return asistencialist;
     }
 
+    //READ Consultar Asistencias por Id_asistencia
+    public List<Asistencias> ListarAsistenciasPorId(int id)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Asistencias> asistencialist = new List<Asistencias>();
+
+        var lstAsistencias = from k in contextDb.Asistencias
+                             where k.id_asistencia == id
+                             select k;
+
+        foreach (var item in lstAsistencias)
+        {
+            Asistencias asistencia = new Asistencias();
+            asistencia.id_asistencia = item.id_asistencia;
+            asistencia.id_usuario = item.id_usuario;
+            asistencia.id_materia = item.id_materia;
+            asistencia.fecha = item.fecha;
+            asistencia.asistio = item.asistio;
+
+            asistencialist.Add(asistencia);
+        }
+        return asistencialist;
+    }
+
     //READ Consultar Asistencias por Id materia
     public List<Asistencias> ListarAsistenciasPorIdMateria(int idMateria)
     {

@@ -1,0 +1,57 @@
+﻿@model WebApplication008.Models.CalificacionesModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro que desea borrar esto?</h3>
+<div>
+    <h4>Calificaciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calificacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" onclick="return confirm('Desea eliminar esta Calificacion?');" value="Borrar" class="btn btn-outline-success" /> |
+            @Html.ActionLink("Regresar al Listado", "Index")
+        </div>
+    }
+</div>

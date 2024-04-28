@@ -279,6 +279,11 @@
     <Content Include="Views\Calificacion\Index.cshtml" />
     <Content Include="Views\Calificacion\Create.cshtml" />
     <Content Include="Views\Asistencia\Edit.cshtml" />
+    <Content Include="Views\Asistencia\Details.cshtml" />
+    <Content Include="Views\Asistencia\Delete.cshtml" />
+    <Content Include="Views\Calificacion\Edit.cshtml" />
+    <Content Include="Views\Calificacion\Details.cshtml" />
+    <Content Include="Views\Calificacion\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Trabajos\" />

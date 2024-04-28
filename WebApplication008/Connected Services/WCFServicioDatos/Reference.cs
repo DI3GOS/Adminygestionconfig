@@ -973,6 +973,12 @@ namespace WebApplication008.WCFServicioDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistencias", ReplyAction="http://tempuri.org/IService/ListarAsistenciasResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistenciasPorId", ReplyAction="http://tempuri.org/IService/ListarAsistenciasPorIdResponse")]
+        WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistenciasPorId", ReplyAction="http://tempuri.org/IService/ListarAsistenciasPorIdResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasPorIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarAsistenciasPorIdMateria", ReplyAction="http://tempuri.org/IService/ListarAsistenciasPorIdMateriaResponse")]
         WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorIdMateria(int idMateria);
         
@@ -1283,6 +1289,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasAsync() {
             return base.Channel.ListarAsistenciasAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorId(int id) {
+            return base.Channel.ListarAsistenciasPorId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Asistencias[]> ListarAsistenciasPorIdAsync(int id) {
+            return base.Channel.ListarAsistenciasPorIdAsync(id);
         }
         
         public WebApplication008.WCFServicioDatos.Asistencias[] ListarAsistenciasPorIdMateria(int idMateria) {

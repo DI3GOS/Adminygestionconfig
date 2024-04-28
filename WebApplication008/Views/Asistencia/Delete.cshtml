@@ -1,0 +1,57 @@
+﻿@model WebApplication008.Models.AsistenciasModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro que desea borrar esto?</h3>
+<div>
+    <h4>Asistencias</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Asistio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Asistio)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" onclick="return confirm('Desea eliminar esta Asistencia?');" value="Borrar" class="btn btn-outline-success" /> |
+            @Html.ActionLink("Regresar al Listado", "Index")
+        </div>
+    }
+</div>

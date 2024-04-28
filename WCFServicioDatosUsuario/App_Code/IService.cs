@@ -84,7 +84,10 @@ public interface IService
 
     [OperationContract]
     List<Asistencias> ListarAsistencias();
-    
+
+    [OperationContract]
+    List<Asistencias> ListarAsistenciasPorId(int id);
+
     [OperationContract]
     List<Asistencias> ListarAsistenciasPorIdMateria(int idMateria);
     

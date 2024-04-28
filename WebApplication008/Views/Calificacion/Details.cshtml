@@ -1,0 +1,51 @@
+﻿@model WebApplication008.Models.CalificacionesModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Calificaciones</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_actividad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_actividad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.calificacion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_calificacion }) |
+    @Html.ActionLink("Regresar al Listado", "Index")
+</p>
