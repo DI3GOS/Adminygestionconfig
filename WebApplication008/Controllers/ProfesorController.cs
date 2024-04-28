@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication008.Models;
 
 namespace WebApplication008.Controllers
 {
@@ -11,13 +12,54 @@ namespace WebApplication008.Controllers
         // GET: Profesor
         public ActionResult Index()
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            List<ProfesorModel> lstRecord = new List<ProfesorModel>();
+            var myListaMaterias = myCliente.ListarMateriasDocentes();
+
+            foreach (var item in myListaMaterias)
+            {
+                ProfesorModel profesor = new ProfesorModel();
+
+                profesor.id_materia_docente = item.id_materia_docente;
+                profesor.id_materia = item.id_materia;
+                profesor.id_usuario = item.id_usuario;
+
+                lstRecord.Add(profesor);
+            }
+
+            if (Session["UserName"] != null)
+            {
+                return View(lstRecord.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         // GET: Profesor/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var objProfesor= myCliente.ListarMateriasDocentesPorId(id);
+
+            var MyProfesor = new ProfesorModel();
+
+            MyProfesor.id_materia_docente = id;
+
+            MyProfesor.id_materia = objProfesor[0].id_materia;
+
+            MyProfesor.id_usuario = objProfesor[0].id_usuario;
+
+
+            if (Session["UserName"] != null)
+            {
+                return View(MyProfesor);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
         }
 
         // GET: Profesor/Create
@@ -28,13 +70,35 @@ namespace WebApplication008.Controllers
 
         // POST: Profesor/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(FormCollection collection, ProfesorModel objProfesor)
         {
             try
             {
-                // TODO: Add insert logic here
+                WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
 
-                return RedirectToAction("Index");
+                try
+                {
+                    WCFServicioDatos.Materias_docentes TblMateria = new WCFServicioDatos.Materias_docentes();
+                    //TblUsuario.Id = 0;
+                    TblMateria.id_usuario = objProfesor.id_usuario;
+                    TblMateria.id_materia_docente = objProfesor.id_materia_docente;
+                    TblMateria.id_materia = objProfesor.id_materia;
+
+                    bool Resval = myCliente.CrearMateriasDocentes(TblMateria);
+
+                    if (Session["UserName"] != null)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                catch
+                {
+                    return View();
+                }
             }
             catch
             {
@@ -45,20 +109,64 @@ namespace WebApplication008.Controllers
         // GET: Profesor/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var myMateria = myCliente.ListarMateriasDocentesPorId(id).ToList();
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var profesor = new ProfesorModel();
+
+                    profesor.id_materia_docente = myMateria[0].id_materia_docente;
+                    profesor.id_usuario = myMateria[0].id_usuario;
+                    profesor.id_materia = myMateria[0].id_materia;
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(profesor);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Profesor/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(ProfesorModel objProfesor, FormCollection collection)
         {
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            bool resVal = false;
             try
             {
-                // TODO: Add update logic here
+                if (ModelState.IsValid)
+                {
+                    WCFServicioDatos.Materias_docentes materiasDocentes = new WCFServicioDatos.Materias_docentes();
 
-                return RedirectToAction("Index");
+                    materiasDocentes.id_materia_docente = objProfesor.id_materia_docente;
+                    materiasDocentes.id_materia = objProfesor.id_materia;
+                    materiasDocentes.id_usuario = objProfesor.id_usuario;
+
+                    resVal = myCliente.EditarMateriaDocente(materiasDocentes); //actualiza objeto Materias
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
-            catch
+            catch (Exception)
             {
                 return View();
             }
@@ -67,7 +175,36 @@ namespace WebApplication008.Controllers
         // GET: Profesor/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var myMateria = myCliente.ListarMateriasDocentesPorId(id);
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var materia = new ProfesorModel();
+                    materia.id_materia_docente = myMateria[0].id_materia_docente;
+                    materia.id_materia = myMateria[0].id_materia;
+                    materia.id_usuario = myMateria[0].id_usuario;
+
+                    if (Session["UserName"] != null)
+                    {
+                        return View(materia);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Login");
+                    }
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            catch (Exception)
+            {
+                return View();
+            }
         }
 
         // POST: Profesor/Delete/5
@@ -76,8 +213,8 @@ namespace WebApplication008.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+                bool Rev = myCliente.EliminarMateriaDocentesPorId(id);
                 return RedirectToAction("Index");
             }
             catch
