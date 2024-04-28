@@ -17,4 +17,5 @@ namespace WebApplication008.Models
         public int id_materia { get; set; }
         public int id_usuario { get; set; }
     }
+
 }
