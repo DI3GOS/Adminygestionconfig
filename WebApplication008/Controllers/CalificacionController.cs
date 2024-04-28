@@ -195,7 +195,7 @@ namespace WebApplication008.Controllers
         public ActionResult Delete(int id)
         {
             WCFServicioDatos.ServiceClient myCalificaciones = new WCFServicioDatos.ServiceClient();
-            var myCalificacion = myCalificaciones.ListarCalificacionesPorIdUsuario(id);
+            var myCalificacion = myCalificaciones.ListarCalificacionesPorId(id);
 
             try
             {
@@ -207,7 +207,6 @@ namespace WebApplication008.Controllers
                     calificacion.Id_usuario = myCalificacion[0].id_usuario;
                     calificacion.calificacion = myCalificacion[0].calificacion.Value;
                     calificacion.tipo_actividad = myCalificacion[0].tipo_actividad;
-
 
 
                     if (Session["UserName"] != null)

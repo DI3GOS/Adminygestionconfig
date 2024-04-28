@@ -140,6 +140,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\MateriasEstudianteController.cs" />
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Controllers\TrabajosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -284,9 +285,14 @@
     <Content Include="Views\Calificacion\Edit.cshtml" />
     <Content Include="Views\Calificacion\Details.cshtml" />
     <Content Include="Views\Calificacion\Delete.cshtml" />
+    <Content Include="Views\Trabajos\Index.cshtml" />
+    <Content Include="Views\Trabajos\Create.cshtml" />
+    <Content Include="Views\Trabajos\Edit.cshtml" />
+    <Content Include="Views\Trabajos\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Trabajos\" />
+    <Folder Include="Views\MateriasProfesor\" />
+    <Folder Include="Views\Profesor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

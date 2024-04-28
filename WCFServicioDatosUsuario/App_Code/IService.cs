@@ -134,7 +134,7 @@ public interface IService
     List<MateriaEstudiante> ListarMateriaEstudiante();
 
     [OperationContract]
-    List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int idUsuario);
+    List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int id);
 
     [OperationContract]
     bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante);

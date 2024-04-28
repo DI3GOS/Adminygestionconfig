@@ -981,28 +981,28 @@ public class Service : IService
         }
     }
 
-    //READ Consultar MateriasEstudiantes por id usuario
-    public List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int idUsuario)
+    //READ Consultar MateriasEstudiantes por id materia estudiante
+    public List<Materias_estudiantes> ListarMateriasEstudiantesPorId(int id)
     {
         LoginDBEntities contextDb = new LoginDBEntities();
         List<Materias_estudiantes> estudiantesMaterialist = new List<Materias_estudiantes>();
 
+
+        var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes
+                                     where k.id_materia_estudiante == id
+                                     select k;
+
+        foreach (var item in lstMateriasEstudiantes)
+        {
+            Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
+            materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
+            materiaEstudiantes.id_materia = item.id_materia;
+            materiaEstudiantes.id_usuario = item.id_usuario;
+
+            estudiantesMaterialist.Add(materiaEstudiantes);
+        }
+
         /*
-        //var lstMateriasEstudiantes = from k in contextDb.Materias_estudiantes
-        //                  where k.id_usuario == idUsuario
-        //                  select k;
-
-        //foreach (var item in lstMateriasEstudiantes)
-        //{
-        //    Materias_estudiantes materiaEstudiantes = new Materias_estudiantes();
-        //    materiaEstudiantes.id_materia_estudiante = item.id_materia_estudiante;
-        //    materiaEstudiantes.id_materia = item.id_materia;
-        //    materiaEstudiantes.id_usuario = item.id_usuario;
-
-        //    estudiantesMaterialist.Add(materiaEstudiantes);
-        //}
-        */
-
         //consulto si el estudiante tiene materias por el Id del usuario
         var query = from Materia_estudiante in contextDb.Materias_estudiantes
                     join materia in contextDb.Materias on Materia_estudiante.id_materia equals materia.id_materia
@@ -1028,6 +1028,7 @@ public class Service : IService
 
             estudiantesMaterialist.Add(materiaEstudiantes);
         }
+        */
 
         return estudiantesMaterialist;
     }

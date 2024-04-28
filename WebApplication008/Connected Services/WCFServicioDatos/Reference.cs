@@ -1058,10 +1058,10 @@ namespace WebApplication008.WCFServicioDatos {
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.MateriaEstudiante[]> ListarMateriaEstudianteAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse")]
-        WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario);
+        WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasEstudiantesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasEstudiantesPorIdResponse")]
-        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int idUsuario);
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/EliminarMateriaEstudiantesPorId", ReplyAction="http://tempuri.org/IService/EliminarMateriaEstudiantesPorIdResponse")]
         bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante);
@@ -1415,12 +1415,12 @@ namespace WebApplication008.WCFServicioDatos {
             return base.Channel.ListarMateriaEstudianteAsync();
         }
         
-        public WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int idUsuario) {
-            return base.Channel.ListarMateriasEstudiantesPorId(idUsuario);
+        public WebApplication008.WCFServicioDatos.Materias_estudiantes[] ListarMateriasEstudiantesPorId(int id) {
+            return base.Channel.ListarMateriasEstudiantesPorId(id);
         }
         
-        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int idUsuario) {
-            return base.Channel.ListarMateriasEstudiantesPorIdAsync(idUsuario);
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_estudiantes[]> ListarMateriasEstudiantesPorIdAsync(int id) {
+            return base.Channel.ListarMateriasEstudiantesPorIdAsync(id);
         }
         
         public bool EliminarMateriaEstudiantesPorId(int idMateriaEstudiante) {
