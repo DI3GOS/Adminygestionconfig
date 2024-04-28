@@ -1,4 +1,4 @@
-﻿@model WebApplication008.WCFServicioDatos.Materias_estudiantes
+﻿@model WebApplication008.Models.Materias_estudiantesModel
 
 @{
     ViewBag.Title = "Delete";
@@ -13,27 +13,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.id_materia)
+            @Html.DisplayNameFor(model => model.Id_materia)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_materia)
+            @Html.DisplayFor(model => model.Id_materia)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_materia_estudiante)
+            @Html.DisplayNameFor(model => model.Id_Usuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_materia_estudiante)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.id_usuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_usuario)
+            @Html.DisplayFor(model => model.Id_Usuario)
         </dd>
 
     </dl>
@@ -42,8 +34,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" onclick="return confirm('Desea borrar esta Materia estudiante?');" value="Borrar" class="btn btn-outline-success" /> |
-            @Html.ActionLink("Regresar al Listado", "Index")
+            <input type="submit" onclick="return confirm('Desea eliminar esta Materia?');" value="Borrar" class="btn btn-outline-success" /> |
+            @Html.ActionLink("Regresar al listado", "Index")
         </div>
     }
 </div>

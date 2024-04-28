@@ -273,9 +273,6 @@
     <Content Include="Views\MateriasEstudiante\Index.cshtml" />
     <Content Include="Views\MateriasEstudiante\Create.cshtml" />
     <Content Include="Views\Asistencia\Index.cshtml" />
-    <Content Include="Views\MateriasEstudiante\Details.cshtml" />
-    <Content Include="Views\MateriasEstudiante\Edit.cshtml" />
-    <Content Include="Views\MateriasEstudiante\Delete.cshtml" />
     <Content Include="Views\Asistencia\Create.cshtml" />
     <Content Include="Views\Calificacion\Index.cshtml" />
     <Content Include="Views\Calificacion\Create.cshtml" />
@@ -289,6 +286,9 @@
     <Content Include="Views\Trabajos\Create.cshtml" />
     <Content Include="Views\Trabajos\Edit.cshtml" />
     <Content Include="Views\Trabajos\Details.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Edit.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Details.cshtml" />
+    <Content Include="Views\MateriasEstudiante\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\MateriasProfesor\" />

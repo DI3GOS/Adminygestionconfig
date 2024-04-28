@@ -1,4 +1,4 @@
-﻿@model WebApplication008.WCFServicioDatos.Materias_estudiantes
+﻿@model WebApplication008.Models.Materias_estudiantesModel
 
 @{
     ViewBag.Title = "Details";
@@ -12,32 +12,24 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.id_materia)
+            @Html.DisplayNameFor(model => model.Id_materia)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_materia)
+            @Html.DisplayFor(model => model.Id_materia)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.id_materia_estudiante)
+            @Html.DisplayNameFor(model => model.Id_Usuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_materia_estudiante)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.id_usuario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_usuario)
+            @Html.DisplayFor(model => model.Id_Usuario)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.id_materia_estudiante }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_materia_estudiante }) |
     @Html.ActionLink("Regresar al Listado", "Index")
 </p>
