@@ -48,11 +48,14 @@
             @Html.DisplayFor(modelItem => item.fecha_entrega)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_trabajo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_trabajo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_trabajo })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_trabajo }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.id_trabajo }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.id_trabajo })
         </td>
     </tr>
 }
 
 </table>
+<div>
+    @Html.ActionLink("Regresar al menu", "Index", "Home")
+</div>

@@ -1,0 +1,65 @@
+﻿@model WebApplication008.Models.TrabajoModel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Borrar</h2>
+
+<h3>Esta seguro que desea borrar esto?</h3>
+<div>
+    <h4>Trabajo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_materia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_materia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_trabajo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_trabajo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.archivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.archivo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_entrega)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_entrega)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" onclick="return confirm('Desea eliminar este Trabajo?');" value="Borrar" class="btn btn-outline-success" /> |
+    @Html.ActionLink("Regresar al listado", "Index")
+</div>
+    }
+</div>
