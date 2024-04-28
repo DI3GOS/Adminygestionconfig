@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     List<SelectListItem> items = new List<SelectListItem>();
-    items.Add(new SelectListItem { Text = "Administrador", Value = "1" });
-    items.Add(new SelectListItem { Text = "Docente", Value = "2" });
-    items.Add(new SelectListItem { Text = "Estudiante", Value = "3" });
+    items.Add(new SelectListItem { Text = "Administrador", Value = "Administrador" });
+    items.Add(new SelectListItem { Text = "Docente", Value = "Administrador" });
+    items.Add(new SelectListItem { Text = "Estudiante", Value = "Administrador" });
     ViewBag.Rol = items;
 }
 
@@ -35,7 +35,7 @@
         <div class="d-flex justify-content-center h-100">
             <div class="card">
                 <div class="card-header">
-                    <img class="Bootstrap center-block Image Preview rounded" src="~/Content/logoUniminuto.png" width="330px" height="80px" />
+                    <img class="Bootstrap center-block Image Preview rounded" src="~/Content/logoUniminuto.png" width="330" height="100" />
                     @*<div class="d-flex justify-content-end social_icon">
                             <span><i class="fab fa-facebook-square"></i></span>
                             <span><i class="fab fa-google-plus-square"></i></span>
@@ -84,7 +84,7 @@
                     }
                 </div>
                 <div class="card-footer">
-                    <div class="d-flex justify-content-center links">
+                    <div class="d-flex justify-content-left links">
                         No tiene cuenta?
                         @Html.ActionLink("Registrese", "Create", "Usuarios", null, new { @class = "ml-2", @style = "color:white;" })
                     </div>

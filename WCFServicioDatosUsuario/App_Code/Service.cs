@@ -1126,6 +1126,28 @@ public class Service : IService
         return materiaDocenteslist;
     }
 
+    //READ Consultar MateriasDocentes por id
+    public List<Materias_docentes> ListarMateriasDocentesPorIdMateriaDocente(int id)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Materias_docentes> docentesMaterialist = new List<Materias_docentes>();
+
+        var lstMateriasDocentes = from k in contextDb.Materias_docentes
+                                  where k.id_materia_docente == id
+                                  select k;
+
+        foreach (var item in lstMateriasDocentes)
+        {
+            Materias_docentes materiaDocentes = new Materias_docentes();
+            materiaDocentes.id_materia_docente = item.id_materia_docente;
+            materiaDocentes.id_materia = item.id_materia;
+            materiaDocentes.id_usuario = item.id_usuario;
+
+            docentesMaterialist.Add(materiaDocentes);
+        }
+        return docentesMaterialist;
+    }
+
     //READ Consultar MateriasDocentes por id usuario
     public List<Materias_docentes> ListarMateriasDocentesPorId(int idUsuario)
     {

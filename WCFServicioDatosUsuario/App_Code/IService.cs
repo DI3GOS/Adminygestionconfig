@@ -150,6 +150,11 @@ public interface IService
     [OperationContract]
     List<Materias_docentes> ListarMateriasDocentes();
 
+
+    [OperationContract]
+    List<Materias_docentes> ListarMateriasDocentesPorIdMateriaDocente(int id);
+
+
     [OperationContract]
     List<Materias_docentes> ListarMateriasDocentesPorId(int idUsuario);
 

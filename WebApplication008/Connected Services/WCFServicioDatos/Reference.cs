@@ -1087,6 +1087,12 @@ namespace WebApplication008.WCFServicioDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentes", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentesPorIdMateriaDocente", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesPorIdMateriaDocenteResponse")]
+        WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorIdMateriaDocente(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentesPorIdMateriaDocente", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesPorIdMateriaDocenteResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesPorIdMateriaDocenteAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarMateriasDocentesPorId", ReplyAction="http://tempuri.org/IService/ListarMateriasDocentesPorIdResponse")]
         WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorId(int idUsuario);
         
@@ -1453,6 +1459,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesAsync() {
             return base.Channel.ListarMateriasDocentesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorIdMateriaDocente(int id) {
+            return base.Channel.ListarMateriasDocentesPorIdMateriaDocente(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Materias_docentes[]> ListarMateriasDocentesPorIdMateriaDocenteAsync(int id) {
+            return base.Channel.ListarMateriasDocentesPorIdMateriaDocenteAsync(id);
         }
         
         public WebApplication008.WCFServicioDatos.Materias_docentes[] ListarMateriasDocentesPorId(int idUsuario) {

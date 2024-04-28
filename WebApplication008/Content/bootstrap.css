@@ -5087,9 +5087,9 @@ input[type="button"].btn-block {
 .card-body {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+          flex: 1 0.7 auto; /* estaba en 1 */
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 1.20rem;
 }
 
 .card-title {

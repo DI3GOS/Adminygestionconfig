@@ -18,7 +18,7 @@
                     <span class="navbar-icon"></span>
                     <span class="navbar-icon"></span>
                 </button>
-                @*@Html.ActionLink("CTE COLSUBSIDIO", "", "", new { area = "" }, new { @class = "navbar-brand" })*@
+                @*@Html.ActionLink("COLEGIO UNIMINUTO", "", "", new { area = "" }, new { @class = "navbar-brand" })*@
                 <a href="#" class="navbar-brand">COLEGIO UNIMINUTO</a>
                 <div class="navbar-collapse collapse pull-right" style="color:white !important;">
                     @{
@@ -28,7 +28,7 @@
                             @:<label style="height:27px; width:90%; text-align:right;">
                                 @:Hola &nbsp;@HttpContext.Current.Session["UserName"].ToString()&nbsp;<span>Rol: </span>
                                 @HttpContext.Current.Session["UserRol"].ToString()<span>&nbsp;</span>
-                            @Html.ActionLink("Cerrar Sesión", "Index", "Login", null, new { @class = "btn btn-outline-success btn-md" })
+                                @Html.ActionLink("Cerrar Sesión", "Index", "Login", null, new { @class = "btn btn-outline-success btn-md" })
                             @: </label>
                         }
                     }
@@ -39,6 +39,7 @@
     <div class="container body-content">
         @RenderBody()
         @*<hr />*@
+        <br />
         <footer>
             <p>&copy; @DateTime.Now.Year - Develop by Diego Sanchez y Johny Camargo CopyRight</p>
         </footer>

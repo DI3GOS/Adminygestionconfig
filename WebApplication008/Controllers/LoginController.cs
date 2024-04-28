@@ -66,6 +66,7 @@ namespace WebApplication008.Controllers
 
                     var user = (from userlist in usuario.ToList()
                                 where userlist.login.Trim() == login.UserName && userlist.clave == convertirClave(login.Password.Trim())
+                                && login.Rol == userlist.rol
                                 select new
                                 {
                                     userlist.id_usuario,

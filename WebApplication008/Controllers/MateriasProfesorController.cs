@@ -7,7 +7,7 @@ using WebApplication008.Models;
 
 namespace WebApplication008.Controllers
 {
-    public class ProfesorController : Controller
+    public class MateriasProfesorController : Controller
     {
         // GET: Profesor
         public ActionResult Index()
@@ -41,7 +41,7 @@ namespace WebApplication008.Controllers
         public ActionResult Details(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var objProfesor= myCliente.ListarMateriasDocentesPorId(id);
+            var objProfesor= myCliente.ListarMateriasDocentesPorIdMateriaDocente(id);
 
             var MyProfesor = new ProfesorModel();
 
@@ -65,7 +65,7 @@ namespace WebApplication008.Controllers
         // GET: Profesor/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new ProfesorModel());
         }
 
         // POST: Profesor/Create
@@ -110,7 +110,7 @@ namespace WebApplication008.Controllers
         public ActionResult Edit(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var myMateria = myCliente.ListarMateriasDocentesPorId(id).ToList();
+            var myMateria = myCliente.ListarMateriasDocentesPorIdMateriaDocente(id).ToList();
 
             try
             {
@@ -176,7 +176,7 @@ namespace WebApplication008.Controllers
         public ActionResult Delete(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var myMateria = myCliente.ListarMateriasDocentesPorId(id);
+            var myMateria = myCliente.ListarMateriasDocentesPorIdMateriaDocente(id);
 
             try
             {

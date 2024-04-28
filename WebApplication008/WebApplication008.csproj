@@ -140,7 +140,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MateriaController.cs" />
     <Compile Include="Controllers\MateriasEstudianteController.cs" />
-    <Compile Include="Controllers\ProfesorController.cs" />
+    <Compile Include="Controllers\MateriasProfesorController.cs" />
     <Compile Include="Controllers\TrabajosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -153,6 +153,7 @@
     <Compile Include="Models\MateriaEstudianteModel.cs" />
     <Compile Include="Models\MateriaModel.cs" />
     <Compile Include="Models\Materias_estudiantesModel.cs" />
+    <Compile Include="Models\ProfesorModel.cs" />
     <Compile Include="Models\TrabajoModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
@@ -290,11 +291,13 @@
     <Content Include="Views\MateriasEstudiante\Details.cshtml" />
     <Content Include="Views\MateriasEstudiante\Delete.cshtml" />
     <Content Include="Views\Trabajos\Delete.cshtml" />
+    <Content Include="Views\MateriasProfesor\Create.cshtml" />
+    <Content Include="Views\MateriasProfesor\Delete.cshtml" />
+    <Content Include="Views\MateriasProfesor\Details.cshtml" />
+    <Content Include="Views\MateriasProfesor\Edit.cshtml" />
+    <Content Include="Views\MateriasProfesor\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\MateriasProfesor\" />
-    <Folder Include="Views\Profesor\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
