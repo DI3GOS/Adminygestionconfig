@@ -52,7 +52,7 @@ namespace WebApplication008.Controllers
         public ActionResult Details(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var objCalificacion = myCliente.ListarCalificacionesPorIdUsuario(id);
+            var objCalificacion = myCliente.ListarCalificacionesPorId(id);
 
             var MyCalificacion = new CalificacionesModel();
 
@@ -123,7 +123,7 @@ namespace WebApplication008.Controllers
         public ActionResult Edit(int id)
         {
             WCFServicioDatos.ServiceClient myCalificaciones = new WCFServicioDatos.ServiceClient();
-            var myCalificacion = myCalificaciones.ListarCalificacionesPorIdUsuario(id).ToList();
+            var myCalificacion = myCalificaciones.ListarCalificacionesPorId(id).ToList();
 
             try
             {

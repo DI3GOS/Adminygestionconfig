@@ -73,6 +73,12 @@
   <wsdl:message name="IService_ListarTrabajos_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarTrabajosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarTrabajosPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_ListarTrabajosPorIdMateria_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarTrabajosPorIdMateria" />
   </wsdl:message>
@@ -174,6 +180,12 @@
   </wsdl:message>
   <wsdl:message name="IService_ListarCalificaciones_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarCalificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificacionesPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificacionesPorId" />
+  </wsdl:message>
+  <wsdl:message name="IService_ListarCalificacionesPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarCalificacionesPorIdResponse" />
   </wsdl:message>
   <wsdl:message name="IService_ListarCalificacionesPorIdUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarCalificacionesPorIdUsuario" />
@@ -298,6 +310,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajos" message="tns:IService_ListarTrabajos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosResponse" message="tns:IService_ListarTrabajos_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorId" message="tns:IService_ListarTrabajosPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdResponse" message="tns:IService_ListarTrabajosPorId_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarTrabajosPorIdMateria">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateria" message="tns:IService_ListarTrabajosPorIdMateria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarTrabajosPorIdMateriaResponse" message="tns:IService_ListarTrabajosPorIdMateria_OutputMessage" />
@@ -365,6 +381,10 @@
     <wsdl:operation name="ListarCalificaciones">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarCalificaciones" message="tns:IService_ListarCalificaciones_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarCalificacionesResponse" message="tns:IService_ListarCalificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificacionesPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarCalificacionesPorId" message="tns:IService_ListarCalificacionesPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ListarCalificacionesPorIdResponse" message="tns:IService_ListarCalificacionesPorId_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarCalificacionesPorIdUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario" message="tns:IService_ListarCalificacionesPorIdUsuario_InputMessage" />
@@ -520,6 +540,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ListarTrabajosPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarTrabajosPorId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListarTrabajosPorIdMateria">
       <soap:operation soapAction="http://tempuri.org/IService/ListarTrabajosPorIdMateria" style="document" />
       <wsdl:input>
@@ -666,6 +695,15 @@
     </wsdl:operation>
     <wsdl:operation name="ListarCalificaciones">
       <soap:operation soapAction="http://tempuri.org/IService/ListarCalificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCalificacionesPorId">
+      <soap:operation soapAction="http://tempuri.org/IService/ListarCalificacionesPorId" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

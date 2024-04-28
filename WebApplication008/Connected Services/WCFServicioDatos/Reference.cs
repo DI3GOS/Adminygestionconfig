@@ -907,6 +907,12 @@ namespace WebApplication008.WCFServicioDatos {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajos", ReplyAction="http://tempuri.org/IService/ListarTrabajosResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Trabajos[]> ListarTrabajosAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajosPorId", ReplyAction="http://tempuri.org/IService/ListarTrabajosPorIdResponse")]
+        WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajosPorId", ReplyAction="http://tempuri.org/IService/ListarTrabajosPorIdResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Trabajos[]> ListarTrabajosPorIdAsync(int id);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarTrabajosPorIdMateria", ReplyAction="http://tempuri.org/IService/ListarTrabajosPorIdMateriaResponse")]
         WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorIdMateria(int id_materia);
         
@@ -1008,6 +1014,12 @@ namespace WebApplication008.WCFServicioDatos {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificaciones", ReplyAction="http://tempuri.org/IService/ListarCalificacionesResponse")]
         System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificacionesPorId", ReplyAction="http://tempuri.org/IService/ListarCalificacionesPorIdResponse")]
+        WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificacionesPorId", ReplyAction="http://tempuri.org/IService/ListarCalificacionesPorIdResponse")]
+        System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesPorIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ListarCalificacionesPorIdUsuario", ReplyAction="http://tempuri.org/IService/ListarCalificacionesPorIdUsuarioResponse")]
         WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorIdUsuario(int idUsuario);
@@ -1203,6 +1215,14 @@ namespace WebApplication008.WCFServicioDatos {
             return base.Channel.ListarTrabajosAsync();
         }
         
+        public WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorId(int id) {
+            return base.Channel.ListarTrabajosPorId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Trabajos[]> ListarTrabajosPorIdAsync(int id) {
+            return base.Channel.ListarTrabajosPorIdAsync(id);
+        }
+        
         public WebApplication008.WCFServicioDatos.Trabajos[] ListarTrabajosPorIdMateria(int id_materia) {
             return base.Channel.ListarTrabajosPorIdMateria(id_materia);
         }
@@ -1337,6 +1357,14 @@ namespace WebApplication008.WCFServicioDatos {
         
         public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesAsync() {
             return base.Channel.ListarCalificacionesAsync();
+        }
+        
+        public WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorId(int id) {
+            return base.Channel.ListarCalificacionesPorId(id);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication008.WCFServicioDatos.Calificaciones[]> ListarCalificacionesPorIdAsync(int id) {
+            return base.Channel.ListarCalificacionesPorIdAsync(id);
         }
         
         public WebApplication008.WCFServicioDatos.Calificaciones[] ListarCalificacionesPorIdUsuario(int idUsuario) {

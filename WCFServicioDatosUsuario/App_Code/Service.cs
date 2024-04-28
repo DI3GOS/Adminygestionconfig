@@ -309,6 +309,30 @@ public class Service : IService
         return trabajolist;
     }
 
+
+    //READ Trabajos por id
+    public List<Trabajos> ListarTrabajosPorId(int id)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Trabajos> trabajolist = new List<Trabajos>();
+
+        var lstTrabajos = from k in contextDb.Trabajos where k.id_trabajo == id select k;
+
+        foreach (var item in lstTrabajos)
+        {
+            Trabajos trabajo = new Trabajos();
+            trabajo.id_trabajo = item.id_trabajo;
+            trabajo.id_usuario = item.id_usuario;
+            trabajo.id_materia = item.id_materia;
+            trabajo.tipo_trabajo = item.tipo_trabajo.Trim();
+            trabajo.archivo = item.archivo.Trim();
+            trabajo.fecha_entrega = item.fecha_entrega;
+
+            trabajolist.Add(trabajo);
+        }
+        return trabajolist;
+    }
+
     //READ Trabajos por id Materia
     public List<Trabajos> ListarTrabajosPorIdMateria(int id_materia)
     {
@@ -717,6 +741,30 @@ public class Service : IService
             calificacionlist.Add(calificacion);
         }
         return calificacionlist;
+    }
+
+    //READ Consultar Calificaciones por Id
+    public List<Calificaciones> ListarCalificacionesPorId(int id)
+    {
+        LoginDBEntities contextDb = new LoginDBEntities();
+        List<Calificaciones> califiacionlist = new List<Calificaciones>();
+
+        var lstCalificacion = from k in contextDb.Calificaciones
+                              where k.id_calificacion == id
+                              select k;
+
+        foreach (var item in lstCalificacion)
+        {
+            Calificaciones calificacion = new Calificaciones();
+            calificacion.id_calificacion = item.id_calificacion;
+            calificacion.id_usuario = item.id_usuario;
+            calificacion.id_materia = item.id_materia;
+            calificacion.tipo_actividad = item.tipo_actividad;
+            calificacion.calificacion = item.calificacion;
+
+            califiacionlist.Add(calificacion);
+        }
+        return califiacionlist;
     }
 
     //READ Consultar Calificaciones por Id usuario

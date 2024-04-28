@@ -125,7 +125,7 @@ namespace WebApplication008.Controllers
         public ActionResult Edit(int id)
         {
             WCFServicioDatos.ServiceClient myAsistente = new WCFServicioDatos.ServiceClient();
-            var varMateria = myAsistente.ListarAsistenciasPorIdMateria(id).ToList();
+            var varMateria = myAsistente.ListarAsistenciasPorId(id).ToList();
 
             try
             {
@@ -197,7 +197,7 @@ namespace WebApplication008.Controllers
         public ActionResult Delete(int id)
         {
             WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
-            var myMateria = myCliente.ListarAsistenciasPorIdMateria(id);
+            var myMateria = myCliente.ListarAsistenciasPorId(id);
 
             try
             {

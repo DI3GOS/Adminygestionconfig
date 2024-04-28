@@ -49,6 +49,9 @@ public interface IService
     List<Trabajos> ListarTrabajos();
 
     [OperationContract]
+    List<Trabajos> ListarTrabajosPorId(int id);
+
+    [OperationContract]
     List<Trabajos> ListarTrabajosPorIdMateria(int id_materia);
 
     [OperationContract]
@@ -106,6 +109,9 @@ public interface IService
 
     [OperationContract]
     List<Calificaciones> ListarCalificaciones();
+
+    [OperationContract]
+    List<Calificaciones> ListarCalificacionesPorId(int id);
 
     [OperationContract]
     List<Calificaciones> ListarCalificacionesPorIdUsuario(int idUsuario);
