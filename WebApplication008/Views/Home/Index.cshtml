@@ -3,59 +3,137 @@
 }
 
 <div class="container ">
-    <div class="row " style="margin:110px 15px;">
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Trabajos Estudiante", "Index", new { controller = "Trabajos" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
+    @{
+        //Esto es para mostrar el Usuario Logeado en la pantalla principal
+        if (!string.IsNullOrEmpty(Session["UserRol"] as string))
+        {
+            //Estudiante
+            if (@HttpContext.Current.Session["UserRol"].ToString() == "Estudiante")
+            {
+                <div class="row " style="margin:110px 15px;">
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Materias Estudiante", "Index", new { controller = "MateriasEstudiante" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
 
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Asistencias Estudiante", "Index", new { controller = "Asistencia" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Calificaciones", "Index", new { controller = "Calificacion" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
 
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Materias Estudiante", "Index", new { controller = "MateriasEstudiante" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Trabajos Estudiante", "Index", new { controller = "Trabajos" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+                </div> <!-- cierra div row -->
+            }
 
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Materias Docentes", "Index", new { controller = "MateriasProfesor" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
+            //Docente
+            if (@HttpContext.Current.Session["UserRol"].ToString() == "Docente")
+            {
+                <div class="row " style="margin:110px 15px;">
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Materias Docentes", "Index", new { controller = "MateriasProfesor" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
 
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/libros_asignaturas.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Materias", "Index", new { controller = "Materia" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Usuarios", "Index", new { controller = "Usuarios" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
-        <div class="col-md-4 ">
-            <div class="text-left">
-                @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
-                <br />
-                @Html.ActionLink("Calificaciones", "Index", new { controller = "Calificacion" }, new { @class = "btn btn-outline-success btn-lg " })
-            </div>
-        </div>
-    </div>
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Calificaciones", "Index", new { controller = "Calificacion" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Trabajos Estudiante", "Index", new { controller = "Trabajos" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Asistencias Estudiante", "Index", new { controller = "Asistencia" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+                </div> <!-- cierra div row -->
+            }
+
+            //Administrador
+            if (@HttpContext.Current.Session["UserRol"].ToString() == "Administrador")
+            {
+                <div class="row " style="margin:110px 15px;">
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Trabajos Estudiante", "Index", new { controller = "Trabajos" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Asistencias Estudiante", "Index", new { controller = "Asistencia" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Materias Estudiante", "Index", new { controller = "MateriasEstudiante" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/employees.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Materias Docentes", "Index", new { controller = "MateriasProfesor" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap center-block Image Preview rounded" src="~/Content/libros_asignaturas.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Materias", "Index", new { controller = "Materia" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Usuarios", "Index", new { controller = "Usuarios" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="text-left">
+                            @*<img class="Bootstrap  center-block Image Preview rounded" src="~/Content/Usuarios.png" width="80" height="80" />*@
+                            <br />
+                            @Html.ActionLink("Calificaciones", "Index", new { controller = "Calificacion" }, new { @class = "btn btn-outline-success btn-lg " })
+                        </div>
+                    </div>
+                </div> <!-- cierra div row -->
+            }//cierra if Administrador
+        }// cierra if Rol
+    } @*Cierra If *@
 </div>

@@ -27,6 +27,7 @@ namespace WebApplication008.Controllers
         {
             try
             {
+                /*
                 //23-04-2024 Johny C. Codigo OK con modelo UserModel
                 //if (ModelState.IsValid)
                 //{
@@ -55,6 +56,7 @@ namespace WebApplication008.Controllers
                 //    }
                 //}
                 //return View(login);
+                */
 
                 //23-04-2024 Johny C. Codigo de prueba con modelo UsuariosModel
                 if (ModelState.IsValid)

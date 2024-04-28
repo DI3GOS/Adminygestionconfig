@@ -1148,7 +1148,7 @@ public class Service : IService
         return docentesMaterialist;
     }
 
-    //READ Consultar MateriasDocentes por id usuario
+    //READ Consultar MateriasDocentes por id usuario    
     public List<Materias_docentes> ListarMateriasDocentesPorId(int idUsuario)
     {
         LoginDBEntities contextDb = new LoginDBEntities();
