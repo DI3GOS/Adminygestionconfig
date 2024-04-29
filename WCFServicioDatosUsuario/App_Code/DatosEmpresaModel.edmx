@@ -25,16 +25,6 @@
           <Property Name="tipo_actividad" Type="varchar" MaxLength="100" />
           <Property Name="calificacion" Type="decimal" Precision="5" Scale="2" />
         </EntityType>
-        <EntityType Name="MateriaEstudiante">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="Rol" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Materia" Type="varchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="Materias">
           <Key>
             <PropertyRef Name="id_materia" />
@@ -85,7 +75,6 @@
         <EntityContainer Name="LoginDBModelStoreContainer">
           <EntitySet Name="Asistencias" EntityType="Self.Asistencias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Calificaciones" EntityType="Self.Calificaciones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MateriaEstudiante" EntityType="Self.MateriaEstudiante" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias" EntityType="Self.Materias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias_docentes" EntityType="Self.Materias_docentes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Materias_estudiantes" EntityType="Self.Materias_estudiantes" Schema="dbo" store:Type="Tables" />
@@ -111,9 +100,9 @@
             <PropertyRef Name="id_asistencia" />
           </Key>
           <Property Name="id_asistencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" DefaultValue="0" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" DefaultValue="0" />
-          <Property Name="fecha" Type="DateTime" Precision="0" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" DefaultValue="0" />
+          <Property Name="id_materia" Type="Int32" DefaultValue="0" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
           <Property Name="asistio" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Calificaciones">
@@ -121,8 +110,8 @@
             <PropertyRef Name="id_calificacion" />
           </Key>
           <Property Name="id_calificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" DefaultValue="0" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="id_usuario" Type="Int32" DefaultValue="0" />
+          <Property Name="id_materia" Type="Int32" DefaultValue="0" />
           <Property Name="tipo_actividad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="calificacion" Type="Decimal" Precision="5" Scale="2" DefaultValue="0.0" />
         </EntityType>
@@ -140,24 +129,24 @@
             <PropertyRef Name="id_materia_docente" />
           </Key>
           <Property Name="id_materia_docente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" DefaultValue="0" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="id_materia" Type="Int32" DefaultValue="0" />
+          <Property Name="id_usuario" Type="Int32" DefaultValue="0" />
         </EntityType>
         <EntityType Name="Materias_estudiantes">
           <Key>
             <PropertyRef Name="id_materia_estudiante" />
           </Key>
           <Property Name="id_materia_estudiante" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" DefaultValue="0" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" DefaultValue="0" />
+          <Property Name="id_materia" Type="Int32" DefaultValue="0" />
+          <Property Name="id_usuario" Type="Int32" DefaultValue="0" />
         </EntityType>
         <EntityType Name="Trabajos">
           <Key>
             <PropertyRef Name="id_trabajo" />
           </Key>
           <Property Name="id_trabajo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_materia" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_materia" Type="Int32" />
           <Property Name="tipo_trabajo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="archivo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="fecha_entrega" Type="DateTime" Precision="0" />
@@ -260,17 +249,6 @@
                 <ScalarProperty Name="apellido" ColumnName="apellido" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MateriaEstudiante">
-            <EntityTypeMapping TypeName="LoginDBModel.MateriaEstudiante">
-              <MappingFragment StoreEntitySet="MateriaEstudiante">
-                <ScalarProperty Name="Materia" ColumnName="Materia" />
-                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Rol" ColumnName="Rol" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

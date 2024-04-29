@@ -20,9 +20,9 @@ public partial class Asistencias
     }
 
     public int id_asistencia { get; set; }
-    public int id_usuario { get; set; }
-    public int id_materia { get; set; }
-    public System.DateTime fecha { get; set; }
+    public Nullable<int> id_usuario { get; set; }
+    public Nullable<int> id_materia { get; set; }
+    public Nullable<System.DateTime> fecha { get; set; }
     public string asistio { get; set; }
 }
 
@@ -37,8 +37,8 @@ public partial class Calificaciones
     }
 
     public int id_calificacion { get; set; }
-    public int id_usuario { get; set; }
-    public int id_materia { get; set; }
+    public Nullable<int> id_usuario { get; set; }
+    public Nullable<int> id_materia { get; set; }
     public string tipo_actividad { get; set; }
     public Nullable<decimal> calificacion { get; set; }
 }
@@ -70,8 +70,8 @@ public partial class Materias_docentes
     }
 
     public int id_materia_docente { get; set; }
-    public int id_materia { get; set; }
-    public int id_usuario { get; set; }
+    public Nullable<int> id_materia { get; set; }
+    public Nullable<int> id_usuario { get; set; }
 }
 
 public partial class Materias_estudiantes
@@ -84,15 +84,15 @@ public partial class Materias_estudiantes
     }
 
     public int id_materia_estudiante { get; set; }
-    public int id_materia { get; set; }
-    public int id_usuario { get; set; }
+    public Nullable<int> id_materia { get; set; }
+    public Nullable<int> id_usuario { get; set; }
 }
 
 public partial class Trabajos
 {
     public int id_trabajo { get; set; }
-    public int id_usuario { get; set; }
-    public int id_materia { get; set; }
+    public Nullable<int> id_usuario { get; set; }
+    public Nullable<int> id_materia { get; set; }
     public string tipo_trabajo { get; set; }
     public string archivo { get; set; }
     public Nullable<System.DateTime> fecha_entrega { get; set; }

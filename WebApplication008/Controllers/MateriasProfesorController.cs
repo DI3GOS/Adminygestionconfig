@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices.CompensatingResourceManager;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -64,7 +65,29 @@ namespace WebApplication008.Controllers
 
         // GET: Profesor/Create
         public ActionResult Create()
-        {
+        {   //prueba
+
+            WCFServicioDatos.ServiceClient myCliente = new WCFServicioDatos.ServiceClient();
+            var myListaMaterias = myCliente.ListarMaterias();
+
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            foreach (var item in myListaMaterias)
+            {
+                listItems.Add(new SelectListItem { Text = item.nombre, Value = item.id_materia.ToString()});
+            }
+
+            ViewBag.Materias = listItems;
+
+            var myListaDocentes = myCliente.ConsultarUsuariosPorRol("Docente");
+
+            List<SelectListItem> listDocentes = new List<SelectListItem>();
+            foreach (var item in myListaDocentes)
+            {
+                listDocentes.Add(new SelectListItem { Text = item.nombre + " " + item.apellido, Value = item.id_usuario.ToString()});
+            }
+
+            ViewBag.Docentes = listItems;
+
             return View(new ProfesorModel());
         }
 

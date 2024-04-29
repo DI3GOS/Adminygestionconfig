@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using WebApplication008.Models;
 
 namespace WebApplication008.Controllers
@@ -97,6 +98,8 @@ namespace WebApplication008.Controllers
 
                 if (Session["UserName"] != null)
                 {
+                    //se deben de llamar igual
+                    ModelState.AddModelError("mensajeErrorName", "Usuario Creado Satisfactoriamente");
                     return RedirectToAction("Index");
                 }
                 else
@@ -149,7 +152,7 @@ namespace WebApplication008.Controllers
                         items.Add(new SelectListItem { Text = "Estudiante", Value = "Estudiante", Selected = true });
                     }
 
-                    ViewData["Rol"] = items;
+                    ViewBag.Rol = items;
 
                     if (Session["UserName"] != null)
                     {
@@ -191,6 +194,8 @@ namespace WebApplication008.Controllers
                     user.clave = objusu.Password;
 
                     resVal = myCliente.EditarUsuario(user);
+                    //se deben de llamar igual
+                    ModelState.AddModelError("mensajeErrorName", "Usuario Actualizado Satisfactoriamente");
                     return RedirectToAction("Index");
                 }
                 else
